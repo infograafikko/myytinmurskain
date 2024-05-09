@@ -47,7 +47,6 @@ const App: Component = () => {
       batch(() => {
         setTransitioning(false);
         setSelected(index);
-        setCardPage(false);
       });
     }
   };
