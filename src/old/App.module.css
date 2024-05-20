@@ -1,0 +1,162 @@
+
+
+.Figure {
+  --main-color: #FFEC2D;
+  --secondary-color: #CCCCCC;
+  --white-color: #FFFFFF;
+  display: block;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Figcaption h2 {
+  font-family: "Campton Medium";
+  font-size: 32px;
+  color: #000;
+  text-align: center; 
+  margin: 16px 0;
+}
+
+.Figure h3 {
+  font-family: "Campton Medium";
+  font-size: 24px;
+  color: #000;
+  text-align: center; 
+  margin: 32px 0;
+  
+}
+
+.Down {
+  font-family: "Campton Medium";
+  font-size: 24px;
+  color: black;
+  text-align: center; 
+  margin: -16px 0 8px 0;
+  transform: rotate(90deg);
+  position: relative;
+  z-index: -1;
+}
+
+.CardsContainer {
+  padding: 32px 0 0 0;
+  margin: 0 0 48px 0;
+  position: relative;
+  
+}
+
+.CardsContainerAnimate {
+  position: relative;
+  margin-top: 300px;
+}
+
+.Card {
+  font-family: "Campton Medium";
+  font-size: 24px;
+  color: #000;
+  text-align: center; 
+  border: 2px solid #000;
+  border-radius: 16px;
+  padding: 0px 0px 32px 0px; 
+  margin-top: -32px;
+  background-color: var(--secondary-color);
+  box-shadow: 0px -20px 15px -3px rgba(0,0,0,0.05), 0px 11px 18px -11px rgba(0,0,0,0.68);
+  transition: max-height 1.5s ease; /* Animate both max-height and margin  max-height: 50px; /* Start with max-height at 0 */
+  overflow: hidden; /* Prevent content from spilling out */
+  position: relative;
+  width: 100%;
+  max-height: 50px;
+}
+
+.CardSelectionPage {  
+  position: absolute;
+  transition: max-height 3s ease; /* Animate both max-height and margin  max-height: 50px; /* Start with max-height at 0 */
+}
+
+
+
+.Card[open] {
+  max-height: 250px; /* Adjust this value based on the maximum content size expected */
+}
+
+
+
+.Card summary {
+  list-style: none;  
+  text-decoration: underline;
+  padding: 16px 0 0 0;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.Card summary::-webkit-details-marker {
+  display:none;
+}
+
+.Card p {
+  font-family: "Campton Book";
+  font-size: 16px;
+  color: #000;
+  text-align: center; 
+  padding: 16px 16px 0 16px;
+}
+
+.Card h4 {
+  font-family: "Campton Medium";
+  font-size: 20px;
+  color: #000;
+  text-align: left; 
+  padding: 16px 16px 0 16px;
+  margin: 0px;
+}
+
+.Card ul {
+  font-family: "Campton Book";
+  font-size: 16px;
+  list-style-type: disc;
+  list-style-position: outside; /* Ensure discs are outside the content box */
+  color: #000;
+  text-align: left;
+  padding: 0px 8px;
+  margin-left: 20px; /* Add some left margin to the list items */
+}
+
+
+
+.CardLast {
+  padding-bottom: 18px;
+}
+
+.CardSelected {
+  background-color: #FFFFFF;
+}
+
+.CardSelected summary {
+  background-color: var(--main-color);
+  padding: 16px 0 16px 0;
+}
+
+.ProgressBar {
+  height: 3px;
+  width: 0%; /* Start width at 0 */
+  background-color: #000;
+  position: absolute;
+  top: 56px;
+  left: 0;
+  transition: none; /* Ensure linear transition for consistent timing */
+}
+
+.Card button {
+  background-color: var(--white-color);
+  border: 2px solid #000;
+  padding: 12px;
+  margin-bottom: 16px;
+  cursor: pointer;
+  font-family: "Campton Medium";
+  font-size: 24px;
+  color: #000;
+  text-align: center; 
+
+}
+
