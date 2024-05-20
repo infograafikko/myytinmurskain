@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, Show, For } from "solid-js";
+import { mergeProps, createEffect, onCleanup, Show, For } from "solid-js";
 import styles from "./Layers.module.css";
 
 const THICKNESS = 5;
@@ -36,17 +36,14 @@ const Gradient = ({ from, to, id }) => (
   </linearGradient>
 );
 
-const Layer = ({
-  text,
-  textcolor,
-  gradient,
-  size = 100,
-  offset = [0, 0, 0],
-  selected = false,
-  fontsize,
-}) => {
-  const w = size,
-    h = 40 * (size / 100),
+const Layer = (props) => {
+  props = mergeProps(
+    { offset: [0, 0, 0], selected: false, size: 80, class: "Packed" },
+    props
+  );
+  let layerRef;
+  const w = props.size,
+    h = 40 * (props.size / 100),
     t = THICKNESS;
   const gid = `gradient-${Math.random().toString(36).substr(2, 9)}`;
   const fid = `filter-${Math.random().toString(36).substr(2, 9)}`;
@@ -55,14 +52,23 @@ const Layer = ({
   const animationDelay = () =>
     `${Math.round((Math.random() * 1 + 0.1) * 10) / 10}s`;
 
+  const thisDelay = animationDelay();
+
+  createEffect(() => console.log(props.offset));
+  createEffect(() => console.log(props.size));
+
   return (
     <g
+      class={props.class}
       style={{
-        "--offset-x": `${offset[0]}px`,
-        "--offset-y": `${offset[1] - 30}px`,
-        "--offset-z": `${offset[2]}px`,
-        "--size": `${size}px`,
-        "animation-delay": animationDelay(),
+        "--offset-x": `${props.offset[0]}px`,
+        "--offset-y": `${props.offset[1] - 30}px`,
+        "--offset-z": `${props.offset[2]}px`,
+        "--middle-x": `${props.middle[0]}px`,
+        "--middle-y": `${props.middle[1]}px`,
+        "--middle-z": `${props.middle[2]}px`,
+        "--size": `${props.size}px`,
+        "animation-delay": thisDelay,
       }}
     >
       <path
@@ -80,18 +86,18 @@ const Layer = ({
         dominant-baseline="middle"
         text-anchor="middle"
         style={{
-          "font-size": fontsize ? fontsize + "px" : "7px",
+          "font-size": props.fontsize ? props.fontsize + "px" : "7px",
           transform: `skew(-68deg, 22deg) translate(calc(-1px * ${
-            size / 100
-          }), calc(-3px * ${size / 100})) scaleY(0.5)`,
-          fill: textcolor,
+            props.size / 100
+          }), calc(-3px * ${props.size / 100})) scaleY(0.5)`,
+          fill: props.textcolor,
         }}
       >
-        {text}
+        {props.text}
       </text>
       <defs>
-        <Gradient id={gid} from={gradient[0]} to={gradient[1]} />
-        <Glow id={fid} color={gradient[0]} />
+        <Gradient id={gid} from={props.gradient[0]} to={props.gradient[1]} />
+        <Glow id={fid} color={props.gradient[0]} />
       </defs>
     </g>
   );
@@ -103,29 +109,36 @@ const Layers = ({ children }) => (
     viewBox="0 0 100 90"
     xmlns="http://www.w3.org/2000/svg"
   >
-    {children}
+    <g>{children}</g>
   </svg>
 );
 
-const LayersContainer = (props) => (
-  <Layers>
-    <For each={props.cards}>
-      {(el, i) => {
-        const totalElements = props.cards.length;
-        const invertedIndex = totalElements - 1 - i();
-        const offset = invertedIndex * 20; // Invert the offset
-        return (
-          <Layer
-            text={el.title}
-            textcolor={el.textcolor}
-            gradient={[el.bgcolor, el.bgcolor]}
-            offset={[0, offset, 0]}
-            fontsize={el.fontsize}
-          />
-        );
-      }}
-    </For>
-  </Layers>
-);
+const LayersContainer = (props) => {
+  const showLayers = () => props.showLayers;
+  createEffect(() => console.log(showLayers()));
+  return (
+    <Layers>
+      <For each={props.cards}>
+        {(el, i) => {
+          const totalElements = props.cards.length;
+          const invertedIndex = totalElements - 1 - i();
+          const offset = invertedIndex * 20; // Invert the offset
+          const middle = (totalElements / 2) * 10;
+          return (
+            <Layer
+              text={el.title}
+              textcolor={el.textcolor}
+              gradient={[el.bgcolor, el.bgcolor]}
+              offset={[0, offset, 0]}
+              middle={[0, middle, 0]}
+              class={showLayers() ? styles.Spread : styles.Packed}
+              fontsize={el.fontsize}
+            />
+          );
+        }}
+      </For>
+    </Layers>
+  );
+};
 
 export default LayersContainer;

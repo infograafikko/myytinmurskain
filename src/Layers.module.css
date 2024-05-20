@@ -1,14 +1,27 @@
 .layers {
-    width: 400px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 400px;
     overflow: visible;
-    margin-left: 48px;
-  
-    g {
+    transform: translate(-40%, -50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+
+    .Spread {
       transform: translateX(var(--offset-x)) translateY(var(--offset-y)) translateZ(var(--offset-z));
-      transition: transform 0.2s ease-out;
       animation: hover 2s 2;
-  
+      transition: transform 0.2s ease-out;
+
+    }
+
+    .Packed {
+      transform: translateX(var(--middle-x)) translateY(var(--middle-y)) translateZ(var(--middle-z));
+      transition: transform 0.2s ease-out;
+    }
+
+    .g {
+      transition: transform 0.2s ease-out;
+
       &:nth-of-type(2) {
         animation-delay: 0.2s;
       }
