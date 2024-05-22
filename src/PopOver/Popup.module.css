@@ -41,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
   .dialog__content {
     z-index: 50;
@@ -51,6 +52,10 @@
     background-color: white;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
     animation: contentHide 300ms ease-in forwards;
+    overflow: scroll;
+    max-height: 80vh;
+    width: calc(100% - 64px);
+    max-width: 600px;
   }
   .dialog__content[data-expanded] {
     animation: contentShow 300ms ease-out;
@@ -67,14 +72,39 @@
     color: hsl(240 5% 34%);
   }
   .dialog__title {
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
     color: hsl(240 6% 10%);
   }
   .dialog__description {
     font-size: 16px;
     color: hsl(240 5% 26%);
   }
+
+  .dialog__description summary {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 4px 0;
+  }
+
+  .dialog__description details[open] summary {
+    margin: 8px 0;
+  }
+
+  .dialog__description details[open] {
+    margin: 8px 0;
+  }
+
+  .dialog__description .conclusion {
+    margin-top: 32px;
+  }
+
+  .dialog__description span {
+    font-size: 12px !important;
+    color: gray;
+  }
+
+
   @keyframes overlayShow {
     from {
       opacity: 0;

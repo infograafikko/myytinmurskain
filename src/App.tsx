@@ -1,76 +1,51 @@
-import { type Component, createSignal, createEffect, batch } from "solid-js";
-import Layers from "./Layers";
-import Popup from "./Popup/Popup";
+import { type Component, Show, createEffect } from "solid-js";
+import Layers from "./Layers/LayersContainer";
+import Popup from "./PopOver/Popup";
+import PopoverComponent from "./PopOver/PopoverComponent";
 import styles from "./App.module.css";
-
-const cards = [
-  {
-    title: "Politiikka",
-    textcolor: "var(--main-text-color)",
-    bgcolor: "var(--main-color)",
-    fontsize: 7,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum hendrerit ex vitae sodales. Donec id leo ipsum. Phasellus volutpat aliquet mauris, et blandit nulla laoreet vitae. Quisque ante dui, porta eu felis nec, scelerisque pharetra turpis.",
-  },
-  {
-    title: "Ympäristö",
-    textcolor: "var(--secondary-text-color)",
-    bgcolor: "var(--secondary-color)",
-    fontsize: 7,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum hendrerit ex vitae sodales. Donec id leo ipsum. Phasellus volutpat aliquet mauris, et blandit nulla laoreet vitae. Quisque ante dui, porta eu felis nec, scelerisque pharetra turpis.",
-  },
-  {
-    title: "Teknologia",
-    textcolor: "var(--tertiary-text-color)",
-    bgcolor: "var(--tertiary-color)",
-    fontsize: 7,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum hendrerit ex vitae sodales. Donec id leo ipsum. Phasellus volutpat aliquet mauris, et blandit nulla laoreet vitae. Quisque ante dui, porta eu felis nec, scelerisque pharetra turpis.",
-  },
-  {
-    title: "Talous",
-    textcolor: "var(--quaternary-text-color)",
-    bgcolor: "var(--quaternary-color)",
-    fontsize: 7,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum hendrerit ex vitae sodales. Donec id leo ipsum. Phasellus volutpat aliquet mauris, et blandit nulla laoreet vitae. Quisque ante dui, porta eu felis nec, scelerisque pharetra turpis.",
-  },
-  {
-    title: "Sosiaaliset tekijät",
-    textcolor: "var(--quinary-text-color)",
-    bgcolor: "var(--quinary-color)",
-    fontsize: 4.25,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum hendrerit ex vitae sodales. Donec id leo ipsum. Phasellus volutpat aliquet mauris, et blandit nulla laoreet vitae. Quisque ante dui, porta eu felis nec, scelerisque pharetra turpis.",
-  },
-  {
-    title: "Etiikka",
-    textcolor: "var(--senary-text-color)",
-    bgcolor: "var(--senary-color)",
-    fontsize: 7,
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus interdum hendrerit ex vitae sodales. Donec id leo ipsum. Phasellus volutpat aliquet mauris, et blandit nulla laoreet vitae. Quisque ante dui, porta eu felis nec, scelerisque pharetra turpis.",
-  },
-];
+import ArrowDown from "./icons/ArrowDown";
+import { useDataContext } from "./DataContext";
 
 const App: Component = () => {
-  const [open, setOpen] = createSignal(false);
-  const [showLayers, setShowLayers] = createSignal(false);
+  const { state, actions } = useDataContext();
+  console.log(state, actions);
+
+  createEffect(() => console.log(state.selectedCard));
 
   return (
-    <figure class={styles.Figure}>
-      <h3>Oletus: Tekoäly tehostaa sote-alan työskentelyä</h3>
-      <p class={styles.Down}>»</p>
-      <h3>Seuraus: Työvoiman tarve vähenee</h3>
-
-      {/* <button onClick={() => setOpen(true)}>Avaa popup</button> */}
-      <Popup open={open()} />
-      <Layers cards={cards} showLayers={showLayers()} />
-      <button class={styles.Button} onClick={() => setShowLayers(true)}>
-        Ymmärretty
-      </button>
-    </figure>
+    <>
+      <figure class={styles.Figure}>
+        <figcaption
+          classList={{
+            [styles.Caption]: true,
+            [styles.Hide]: state.showLayers,
+          }}
+        >
+          <h2 class={styles.Title}>
+            Miten todennäköisesti skenaario toteutuu?
+          </h2>
+        </figcaption>
+        <h3>Oletus: Tekoäly tehostaa sote-alan työskentelyä</h3>
+        <Show when={!state.showLayers}>
+          <ArrowDown size={64} />
+        </Show>
+        <Layers />
+        <Show when={state.showLayers}>
+          <PopoverComponent />
+        </Show>
+        <h3>Seuraus: Työvoiman tarve vähenee</h3>
+        <Popup open={state.popupOpen} />
+        {/* <button onClick={() => setOpen(true)}>Avaa popup</button> */}
+        <Show when={!state.showLayers}>
+          <button
+            class={styles.Button}
+            onClick={() => actions.setShowLayers(true)}
+          >
+            Kokeile itse interaktiivisella työkalulla
+          </button>
+        </Show>
+      </figure>
+    </>
   );
 };
 

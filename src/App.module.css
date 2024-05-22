@@ -7,6 +7,7 @@
   --quaternary-color: #4b624b;
   --quinary-color: #CAA1A6;
   --senary-color: #CA6C38;
+  --dark-gray-color: #333333;
   --gray-color: #CCCCCC;
   --white-color: #FFFFFF;
   --main-text-color: black;
@@ -29,12 +30,52 @@
   margin-block-end: 0;
   margin-inline-start: 0;
   margin-inline-end: 0;
-
   background: 
   radial-gradient(circle, var(--white-color), transparent), 
   linear-gradient(45deg, var(--gray-color), var(--gray-color));
   max-width: 100%;
 }
+
+.Hide {
+  display: none;
+}
+
+.Caption {
+  background-color: var(--dark-gray-color);
+  color: var(--white-color);
+  padding: 8px;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 16px 0;
+  line-height: 1.25;
+}
+
+.Down {
+  width: 64px;
+  height: 64px;
+  display: block;
+  position: relative;
+  transform: rotate(0deg);
+}
+
+.Title {
+  font-family: "Campton Medium";
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center; 
+  padding: 8px 16px;
+  margin: 0;
+}
+
+.Description {
+  font-family: "Campton Medium";
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+  text-align: center; 
+  margin: 4px 0 16px 0;
+}
+
 
 
 .Figure h3 {
@@ -42,22 +83,20 @@
   font-size: 24px;
   color: #000;
   text-align: center; 
-  margin: 64px 0;
+  margin: 16px 0;
   
 }
-
-.Down {
-  font-family: "Campton Medium";
-  font-size: 24px;
-  color: black;
-  text-align: center; 
-  margin: -16px 0 8px 0;
-  transform: rotate(90deg);
-  position: relative;
-}
-
 .Button {
   position: relative;
+  font-family: "Campton Medium";
+  font-size: 24px;
+  margin: 16px 0;
+  border: 0;
   z-index: 20;
+  background-color: var(--main-color);
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 0 8px #bbb; 
+  cursor: pointer;
 }
 
