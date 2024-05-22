@@ -8,6 +8,8 @@ export const defaultCards: cardType[] = [
       fontsize: 7,
       description:`Etiikka on keskeinen tekijä tekoälyn käytössä sosiaali- ja terveysalalla, ja sillä voi olla merkittäviä vaikutuksia siihen, kuinka todennäköisesti tekoäly tehostaa alaa ja vaikuttaa työvoiman tarpeeseen. Etiikka vaikuttaa tässä skenaariossa sekä positiivisesti että negatiivisesti.
 
+      <p>Painamalla alla näkyviä nuolia saat lisätietoja.</p>
+
         ### Todennäköisyyttä lisää
 
         <details><summary>Luottamus ja hyväksyntä:</summary>Eettiset ohjeistukset ja toimintatavat voivat lisätä kansalaisten ja terveydenhuollon ammattilaisten luottamusta tekoälyn käyttn. Tämä voi nopeuttaa teknologian omaksumista ja käyttnottoa, mikä johtaa tehokkaampaan tyskentelyyn sote-alalla.</details>
@@ -28,6 +30,8 @@ export const defaultCards: cardType[] = [
       bgcolor: "var(--secondary-color)",
       fontsize: 7,
       description:`Etiikka on keskeinen tekijä tekoälyn käytössä sosiaali- ja terveysalalla, ja sillä voi olla merkittäviä vaikutuksia siihen, kuinka todennäköisesti tekoäly tehostaa alaa ja vaikuttaa työvoiman tarpeeseen. Etiikka vaikuttaa tässä skenaariossa sekä positiivisesti että negatiivisesti.
+
+      <p>Painamalla alla näkyviä nuolia saat lisätietoja.</p>
 
       ### Todennäköisyyttä lisää
 
@@ -50,6 +54,8 @@ export const defaultCards: cardType[] = [
       fontsize: 7,
       description:`Etiikka on keskeinen tekijä tekoälyn käytössä sosiaali- ja terveysalalla, ja sillä voi olla merkittäviä vaikutuksia siihen, kuinka todennäköisesti tekoäly tehostaa alaa ja vaikuttaa työvoiman tarpeeseen. Etiikka vaikuttaa tässä skenaariossa sekä positiivisesti että negatiivisesti.
 
+      <p>Painamalla alla näkyviä nuolia saat lisätietoja.</p>
+
       ### Todennäköisyyttä lisää
 
       <details><summary>Luottamus ja hyväksyntä:</summary>Eettiset ohjeistukset ja toimintatavat voivat lisätä kansalaisten ja terveydenhuollon ammattilaisten luottamusta tekoälyn käyttn. Tämä voi nopeuttaa teknologian omaksumista ja käyttnottoa, mikä johtaa tehokkaampaan tyskentelyyn sote-alalla.</details>
@@ -70,6 +76,8 @@ export const defaultCards: cardType[] = [
       bgcolor: "var(--quaternary-color)",
       fontsize: 7,
       description:`Etiikka on keskeinen tekijä tekoälyn käytössä sosiaali- ja terveysalalla, ja sillä voi olla merkittäviä vaikutuksia siihen, kuinka todennäköisesti tekoäly tehostaa alaa ja vaikuttaa työvoiman tarpeeseen. Etiikka vaikuttaa tässä skenaariossa sekä positiivisesti että negatiivisesti.
+
+        <p>Painamalla alla näkyviä nuolia saat lisätietoja.</p>
 
         ### Todennäköisyyttä lisää
 
@@ -92,6 +100,8 @@ export const defaultCards: cardType[] = [
       fontsize: 4.25,
       description:`Etiikka on keskeinen tekijä tekoälyn käytössä sosiaali- ja terveysalalla, ja sillä voi olla merkittäviä vaikutuksia siihen, kuinka todennäköisesti tekoäly tehostaa alaa ja vaikuttaa työvoiman tarpeeseen. Etiikka vaikuttaa tässä skenaariossa sekä positiivisesti että negatiivisesti.
 
+      <p>Painamalla alla näkyviä nuolia saat lisätietoja.</p>
+
       ### Todennäköisyyttä lisää
 
       <details><summary>Luottamus ja hyväksyntä:</summary>Eettiset ohjeistukset ja toimintatavat voivat lisätä kansalaisten ja terveydenhuollon ammattilaisten luottamusta tekoälyn käyttn. Tämä voi nopeuttaa teknologian omaksumista ja käyttnottoa, mikä johtaa tehokkaampaan tyskentelyyn sote-alalla.</details>
@@ -112,6 +122,8 @@ export const defaultCards: cardType[] = [
       bgcolor: "var(--senary-color)",
       fontsize: 7,
       description:`Etiikka on keskeinen tekijä tekoälyn käytössä sosiaali- ja terveysalalla, ja sillä voi olla merkittäviä vaikutuksia siihen, kuinka todennäköisesti tekoäly tehostaa alaa ja vaikuttaa työvoiman tarpeeseen. Etiikka vaikuttaa tässä skenaariossa sekä positiivisesti että negatiivisesti.
+
+      <p>Painamalla alla näkyviä nuolia saat lisätietoja.</p>
 
         ### Todennäköisyyttä lisää
 
