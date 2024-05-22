@@ -3,7 +3,7 @@ import solidPlugin from 'vite-plugin-solid';
 import devtools from 'solid-devtools/vite';
 
 export default defineConfig({
-  base:"https://infograafikko.github.io/myytinmurskain/dist/",
+  base:"https://infograafikko.github.io/myytinmurskain/",
   plugins: [    
     devtools({
     /* features options - all disabled by default */
