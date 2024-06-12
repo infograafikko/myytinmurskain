@@ -13,6 +13,9 @@ dependencies:
   snarkdown:
     specifier: ^2.0.0
     version: 2.0.0
+  solid-element:
+    specifier: ^1.8.0
+    version: 1.8.0(solid-js@1.8.17)
   solid-js:
     specifier: ^1.8.17
     version: 1.8.17
@@ -1011,6 +1014,10 @@ packages:
     resolution: {integrity: sha512-72fSenhMw2HZMTVHeCA9KCmpEIbzWiQsjN+BHcBbS9vr1mtt+vJjPdksIBNUmKAW8TFUDPJK5SUU3QhE9NEXDw==}
     dev: true
 
+  /component-register@0.8.3:
+    resolution: {integrity: sha512-/0u8ov0WPWi2FL78rgB9aFOcfY8pJT4jP/l9NTOukGNLVQ6hk35sEJE1RkEnNQU3yk48Qr7HlDQjRQKEVfgeWg==}
+    dev: false
+
   /convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: true
@@ -1238,6 +1245,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /solid-element@1.8.0(solid-js@1.8.17):
+    resolution: {integrity: sha512-DG8HBCej5kNExUiFbVG8OFZojMGcLF8keXdGLEcHXBYtJ7zhm+a8HJnl5lfmBlTYGRk4ApgoBvlwH1ibg7quaQ==}
+    peerDependencies:
+      solid-js: ^1.8.0
+    dependencies:
+      component-register: 0.8.3
+      solid-js: 1.8.17
+    dev: false
 
   /solid-js@1.8.17:
     resolution: {integrity: sha512-E0FkUgv9sG/gEBWkHr/2XkBluHb1fkrHywUgA6o6XolPDCJ4g1HaLmQufcBBhiF36ee40q+HpG/vCZu7fLpI3Q==}
