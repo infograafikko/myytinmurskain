@@ -1,4 +1,4 @@
-import { type Component, createEffect } from "solid-js";
+import { type Component, createEffect, Show, For } from "solid-js";
 import { Dialog } from "@kobalte/core/dialog";
 import style from "./Popup.module.css";
 import Close from "../icons/Close";
@@ -9,21 +9,38 @@ type DialogProps = {
   open: boolean;
 };
 
+const Details = (props: {
+  title: string;
+  description: string;
+  index: number;
+}) => {
+  return (
+    <Show when={props?.title?.length > 0}>
+      <details
+        style={{
+          "border-bottom": "1px solid lightgray",
+          margin: props.index !== 1 ? "8px 0" : "0",
+        }}
+        class={style.details}
+      >
+        <summary>
+          {props.title}{" "}
+          <Show when={props.index === 1}>
+            <span class={style.additionalText}>
+              Paina otsikkoa lukeaksesi lisää aiheesta
+            </span>
+          </Show>
+        </summary>
+        <p innerHTML={snarkdown(props.description)} />
+      </details>
+    </Show>
+  );
+};
+
 const Popup: Component<DialogProps> = (props) => {
   const { state, actions, memos } = useDataContext();
-  const snarked = (t: string) => t.split("\n").map((line) => snarkdown(line));
-  const trimmed = (data: any) =>
-    data.description
-      .split("\n")
-      .map((line: string) => line.trim())
-      .filter((line: string) => line.trim() !== "");
-  createEffect(() => {
-    const desc = memos
-      .cardDetails()
-      .description.split("\n")
-      .map((line: string) => line.trim())
-      .filter((line: string) => line.trim() !== "");
-  });
+
+  createEffect(() => console.log(memos.cardDetails()));
   return (
     <Dialog
       open={state.popupOpen}
@@ -37,19 +54,69 @@ const Popup: Component<DialogProps> = (props) => {
           <Dialog.Content class={style.dialog__content}>
             <div class={style.dialog__header}>
               <Dialog.Title class={style.dialog__title}>
-                {memos.cardDetails().title}
+                {memos.cardDetails()?.teemat}
               </Dialog.Title>
               <Dialog.CloseButton
                 onClick={() => actions.setPopupOpen(false)}
-                class="style.dialog__close-button"
+                class={style["dialog__close-button"]}
               >
                 <Close size={16} />
               </Dialog.CloseButton>
             </div>
             <Dialog.Description class={style.dialog__description}>
-              {trimmed(memos.cardDetails()).map((line: string) => (
-                <div innerHTML={snarked(line)} />
-              ))}
+              <p class={style.details__description}>
+                {memos.cardDetails()?.teema_kuvaus}
+              </p>
+              {/* MAHDOLLISUUDET */}
+              <h3 class={style.details__title}>Mahdollisuudet</h3>
+              <For each={[1, 2, 3, 4, 5, 6]}>
+                {(el) => {
+                  return (
+                    <Details
+                      title={
+                        memos.cardDetails()?.[
+                          "teema_mahdollisuudet_otsikko" + el
+                        ]
+                      }
+                      description={
+                        memos.cardDetails()?.[
+                          "teema_mahdollisuudet_teksti" + el
+                        ]
+                      }
+                      index={el}
+                    />
+                  );
+                }}
+              </For>
+              {/* HAASTEET */}
+              <h3 class={style.details__title}>Haasteet</h3>
+              <For each={[1, 2, 3, 4, 5, 6]}>
+                {(el) => {
+                  return (
+                    <Details
+                      title={
+                        memos.cardDetails()?.["teema_haasteet_otsikko" + el]
+                      }
+                      description={
+                        memos.cardDetails()?.["teema_haasteet_teksti" + el]
+                      }
+                      index={el}
+                    />
+                  );
+                }}
+              </For>
+              {/* ESIMERKIT */}
+              <h3 class={style.title}>Esimerkit</h3>
+              <div
+                class={style.content}
+                innerHTML={snarkdown(memos.cardDetails()?.teema_esimerkit)}
+              />
+              {/* KYSYMYKSET */}
+              <h3 class={style.title}>Pohdittavia kysymyksiä</h3>
+              <div
+                class={style.content}
+                innerHTML={snarkdown(memos.cardDetails()?.teema_kysymykset)}
+              />
             </Dialog.Description>
           </Dialog.Content>
         </div>

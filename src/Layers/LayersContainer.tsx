@@ -32,7 +32,7 @@ const LayersContainer = () => {
 
   return (
     <Layers showLayers={state.showLayers}>
-      <For each={state.cards}>
+      <For each={state.texts.teemat}>
         {(el, i) => {
           const totalElements = state.cards.length;
           const invertedIndex = totalElements - 1 - i();
@@ -41,13 +41,16 @@ const LayersContainer = () => {
           return (
             <SingleLayer
               index={i()}
-              text={el.title}
-              textcolor={el.textcolor}
-              gradient={[el.bgcolor, el.bgcolor]}
+              text={el}
+              textcolor={state.texts.teema_tekstivari?.[i()]}
+              gradient={[
+                state.texts.teema_taustavari?.[i()],
+                state.texts.teema_taustavari?.[i()],
+              ]}
               offset={[0, offset, 0]}
               middle={[0, middle, 0]}
               class={state.showLayers ? styles.Spread : styles.Packed}
-              fontsize={el.fontsize}
+              fontsize={state.texts.teema_tekstikoko?.[i()]}
             />
           );
         }}

@@ -18,14 +18,14 @@ const PopoverComponent: Component = () => {
           <Popover.Arrow class={styles.arrow} />
           <div class={styles.header}>
             <Popover.Title class={styles.title}>
-              Tutki teemoja interaktiivisella työkalulla
+              {state.texts.opasteotsikko}
             </Popover.Title>
             <Popover.CloseButton class={styles.closeButton}>
               <Close size={16} />
             </Popover.CloseButton>
           </div>
           <Popover.Description class={styles.description}>
-            Voit valita haluamasi teeman klikkaamalla siitä.
+            {state.texts.opasteteksti}
           </Popover.Description>
           <div class={styles.finger}>
             <Finger size={64} />

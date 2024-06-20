@@ -65,17 +65,24 @@
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 6px;
   }
-  .close-button {
-    height: 16px;
-    width: 16px;
-    color: hsl(240 5% 34%);
+  .closeButton {
+    height: 32px;
+    width: 32px;
+    background: lightgray;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 16px;
   }
   .title {
     font-size: 24px;
     font-weight: 700;
     color: hsl(240 6% 10%);
+    margin: 16px 0 8px 0;
+
   }
   .description {
     font-size: 14px;

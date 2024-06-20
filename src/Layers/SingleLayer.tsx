@@ -29,12 +29,17 @@ const Glow = ({ color, id }) => (
   </filter>
 );
 
-const Gradient = ({ from, to, id }) => (
-  <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="0%">
-    <stop offset="0%" stop-color={from} />
-    <stop offset="100%" stop-color={to} />
-  </linearGradient>
-);
+const Gradient = (props) => {
+  const from = () => props.from;
+  const to = () => props.to;
+  const id = () => props.id;
+  return (
+    <linearGradient id={id()} x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color={from()} />
+      <stop offset="100%" stop-color={to()} />
+    </linearGradient>
+  );
+};
 
 const SingleLayer = (props) => {
   const { actions } = useDataContext();
@@ -82,7 +87,7 @@ const SingleLayer = (props) => {
         dominant-baseline="middle"
         text-anchor="middle"
         style={{
-          "font-size": p.fontsize ? p.fontsize + "px" : "7px",
+          "font-size": p.fontsize ? p.fontsize : "7px",
           transform: `skew(-68deg, 22deg) translate(calc(-1px * ${
             p.size / 100
           }), calc(-3px * ${p.size / 100})) scaleY(0.5)`,
