@@ -392,8 +392,8 @@ const Root: Component = () => {
             <p>
               <i>
                 Tätä valikkoa voi myös käyttää siten, että liität Wordpressistä
-                koodin ja painat sivun alalaidasta 'Tallenna muutokset'. Tällöin
-                näkymään päivittyy liittämäsi tekstisisällöt.
+                koodin ja painat näkymän alalaidasta 'Tallenna muutokset'.
+                Tällöin näkymään päivittyy liittämäsi tekstisisällöt.
               </i>
             </p>
           </summary>

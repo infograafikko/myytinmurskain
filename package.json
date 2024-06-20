@@ -8,6 +8,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:webcomponent": "vite build --config vite.webcomponent.config.ts",
+    "build:cms": "vite build --config vite.cms.config.ts",
+    "build:all": "npm run build && npm run build:webcomponent && npm run build:cms",
     "serve": "vite preview"
   },
   "license": "MIT",
