@@ -2,7 +2,9 @@ import { cardType } from "./CardType";
 
 export type StateType = {
     cards: cardType[];
+    tutorialStage: number;
     selectedCard: number;
+    middleCard: number;
     showLayers: boolean;
     cardsRef: HTMLElement | null;
     popupOpen: boolean;
@@ -50,6 +52,8 @@ export type TextType = {
 }
 
 export type ActionsType = {
+    setMiddleCard: (index: number) => void;
+    setTutorialStage: (stage: number) => void;
     setCardsRef: (ref: HTMLElement) => void;
     setSelectedCard: (index: number) => void;
     setShowLayers: (show: boolean) => void;

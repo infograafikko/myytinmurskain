@@ -5,7 +5,7 @@ const Root: Component = () => {
   return (
     <>
       <Myytinmurskain />
-      <myytin-murskain></myytin-murskain>
+      {/* <myytin-murskain></myytin-murskain> */}
     </>
   );
 };

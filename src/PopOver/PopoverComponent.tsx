@@ -1,38 +1,145 @@
-import { type Component } from "solid-js";
+import { type Component, Match, Switch, Show } from "solid-js";
 import { Popover } from "@kobalte/core/popover";
 import styles from "./PopoverComponent.module.css";
 import { useDataContext } from "../DataContext";
-import { useWindowSize } from "@solid-primitives/resize-observer";
-import Close from "../icons/Close";
-import Finger from "../icons/Finger";
+import snarkdown from "snarkdown";
+import Cursor from "../icons/Cursor";
 
-const PopoverComponent: Component = () => {
-  const { state } = useDataContext();
-  const ref = () =>
-    state.cardsRef && state.cardsRef.querySelectorAll("g")[state.selectedCard];
+const infos = [
+  {
+    title: "Näin käytät työkalua 1/3",
+    description: "Ylhäällä näet skenaarion oletuksen",
+    placement: "bottom-start",
+  },
+  {
+    title: "Näin käytät työkalua 2/3",
+    description:
+      "Alhaalla näet oletuksen seurauksen. Otsikon perässä oleva kysymysmerkki indikoi ennusteeseen liittyvää epävarmuutta.",
+    placement: "top-start",
+  },
+  {
+    title: "Näin käytät työkalua 3/3",
+    description:
+      "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa teemoja lukeaksesi niistä lisää.**",
+    placement: "bottom-start",
+  },
+];
 
+const PopoverBuilder: Component = (props) => {
   return (
     <div class={styles.container}>
-      <Popover defaultOpen={true} anchorRef={ref} placement="bottom-start">
+      <Popover
+        defaultOpen={true}
+        anchorRef={props.ref}
+        placement={props.placement}
+        onOpenChange={(isOpen) => {
+          if (!isOpen) {
+            props.setTutorialStage(props.tutorialStage + 1);
+          }
+        }}
+      >
         <Popover.Content class={styles.content}>
           <Popover.Arrow class={styles.arrow} />
           <div class={styles.header}>
-            <Popover.Title class={styles.title}>
-              {state.texts.opasteotsikko}
-            </Popover.Title>
-            <Popover.CloseButton class={styles.closeButton}>
-              <Close size={16} />
-            </Popover.CloseButton>
+            <Popover.Title class={styles.title}>{props.title}</Popover.Title>
           </div>
           <Popover.Description class={styles.description}>
-            {state.texts.opasteteksti}
+            <p innerHTML={snarkdown(props.description)} />
+            <div class={styles.buttonsContainer}>
+              <button
+                classList={{
+                  [styles.buttonPrimary]: true,
+                  [styles.button]: true,
+                }}
+                onClick={() => {
+                  props.setTutorialStage(props.tutorialStage + 1);
+                }}
+              >
+                <Switch>
+                  <Match when={props.tutorialStage < 2}>Seuraava</Match>
+                  <Match when={props.tutorialStage >= 2}>
+                    Siirry työkaluun
+                  </Match>
+                </Switch>
+              </button>
+              <Show when={props.tutorialStage < 2}>
+                <button
+                  classList={{
+                    [styles.buttonSecondary]: true,
+                    [styles.button]: true,
+                  }}
+                  onClick={() => {
+                    props.setTutorialStage(3);
+                  }}
+                  title="Ohita käyttöopas ja siirry työkaluun"
+                >
+                  Ohita käyttopas
+                </button>
+              </Show>
+            </div>
           </Popover.Description>
-          <div class={styles.finger}>
-            <Finger size={64} />
-          </div>
+          <Show when={props.tutorialStage === 2}>
+            <div class={styles.cursorContainer}>
+              <Cursor size={64} />
+            </div>
+          </Show>
         </Popover.Content>
       </Popover>
     </div>
+  );
+};
+
+const PopoverComponent: Component = () => {
+  const { state, actions } = useDataContext();
+
+  const ref = () => {
+    if (state.tutorialStage === 0) {
+      return document.querySelector(".oletusotsikko");
+    } else if (state.tutorialStage === 1) {
+      return document.querySelector(".seurausotsikko");
+    } else if (state.cardsRef) {
+      const cards = state.cardsRef.querySelectorAll("g");
+      const middleIndex = Math.ceil(cards.length / 2); // Calculate the middle index
+      actions.setMiddleCard(middleIndex);
+      return cards[middleIndex]; // Select the center card
+    }
+  };
+
+  const currentCard = () => infos[state.tutorialStage];
+
+  return (
+    <Switch>
+      <Match when={state.tutorialStage === 0}>
+        <PopoverBuilder
+          ref={ref}
+          placement={currentCard().placement}
+          title={currentCard().title}
+          description={currentCard().description}
+          setTutorialStage={actions.setTutorialStage}
+          tutorialStage={state.tutorialStage}
+        />
+      </Match>
+      <Match when={state.tutorialStage === 1}>
+        <PopoverBuilder
+          ref={ref}
+          placement={currentCard().placement}
+          title={currentCard().title}
+          description={currentCard().description}
+          setTutorialStage={actions.setTutorialStage}
+          tutorialStage={state.tutorialStage}
+        />
+      </Match>
+      <Match when={state.tutorialStage === 2}>
+        <PopoverBuilder
+          ref={ref}
+          placement={currentCard().placement}
+          title={currentCard().title}
+          description={currentCard().description}
+          setTutorialStage={actions.setTutorialStage}
+          tutorialStage={state.tutorialStage}
+        />
+      </Match>
+    </Switch>
   );
 };
 

@@ -1,5 +1,12 @@
 
 @font-face {
+  font-family: 'ChassiS';
+  src: url('../../assets/fonts/Chassi/font.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Campton Book';
   src: url('../../assets/fonts/CamptonBook/font.woff2') format('woff2');
   font-weight: 500;
@@ -12,6 +19,7 @@
   font-weight: 700;
   font-style: normal;
 }
+
 
 
 /* Specific resets for your existing styles */

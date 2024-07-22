@@ -68,6 +68,7 @@ const SingleLayer = (props) => {
         "--middle-y": `${p.middle[1]}px`,
         "--middle-z": `${p.middle[2]}px`,
         "--size": `${props.size}px`,
+        cursor: props.showPointer ? "pointer" : "default",
         //"animation-delay": thisDelay,
       }}
       onClick={() => actions.setSelectedCard(p.index)}

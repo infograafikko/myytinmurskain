@@ -16,21 +16,8 @@ const Details = (props: {
 }) => {
   return (
     <Show when={props?.title?.length > 0}>
-      <details
-        style={{
-          "border-bottom": "1px solid lightgray",
-          margin: props.index !== 1 ? "8px 0" : "0",
-        }}
-        class={style.details}
-      >
-        <summary>
-          {props.title}{" "}
-          <Show when={props.index === 1}>
-            <span class={style.additionalText}>
-              Paina otsikkoa lukeaksesi lisää aiheesta
-            </span>
-          </Show>
-        </summary>
+      <details class={style.details}>
+        <summary>{props.title}</summary>
         <p innerHTML={snarkdown(props.description)} />
       </details>
     </Show>
@@ -59,6 +46,7 @@ const Popup: Component<DialogProps> = (props) => {
               <Dialog.CloseButton
                 onClick={() => actions.setPopupOpen(false)}
                 class={style["dialog__close-button"]}
+                title="Sulje popup"
               >
                 <Close size={16} />
               </Dialog.CloseButton>
@@ -68,43 +56,53 @@ const Popup: Component<DialogProps> = (props) => {
                 {memos.cardDetails()?.teema_kuvaus}
               </p>
               {/* MAHDOLLISUUDET */}
-              <h3 class={style.details__title}>Mahdollisuudet</h3>
-              <For each={[1, 2, 3, 4, 5, 6]}>
-                {(el) => {
-                  return (
-                    <Details
-                      title={
-                        memos.cardDetails()?.[
-                          "teema_mahdollisuudet_otsikko" + el
-                        ]
-                      }
-                      description={
-                        memos.cardDetails()?.[
-                          "teema_mahdollisuudet_teksti" + el
-                        ]
-                      }
-                      index={el}
-                    />
-                  );
-                }}
-              </For>
+              <div class={style.details__container}>
+                <h3 class={style.details__title}>Mahdollisuudet</h3>
+                <p class={style.details__subtitle}>
+                  Paina alla olevia otsikoita lukeaksesi lisää aiheesta.
+                </p>
+                <For each={[1, 2, 3, 4, 5, 6]}>
+                  {(el) => {
+                    return (
+                      <Details
+                        title={
+                          memos.cardDetails()?.[
+                            "teema_mahdollisuudet_otsikko" + el
+                          ]
+                        }
+                        description={
+                          memos.cardDetails()?.[
+                            "teema_mahdollisuudet_teksti" + el
+                          ]
+                        }
+                        index={el}
+                      />
+                    );
+                  }}
+                </For>
+              </div>
               {/* HAASTEET */}
-              <h3 class={style.details__title}>Haasteet</h3>
-              <For each={[1, 2, 3, 4, 5, 6]}>
-                {(el) => {
-                  return (
-                    <Details
-                      title={
-                        memos.cardDetails()?.["teema_haasteet_otsikko" + el]
-                      }
-                      description={
-                        memos.cardDetails()?.["teema_haasteet_teksti" + el]
-                      }
-                      index={el}
-                    />
-                  );
-                }}
-              </For>
+              <div class={style.details__container}>
+                <h3 class={style.details__title}>Haasteet</h3>
+                <p class={style.details__subtitle}>
+                  Paina alla olevia otsikoita lukeaksesi lisää aiheesta.
+                </p>
+                <For each={[1, 2, 3, 4, 5, 6]}>
+                  {(el) => {
+                    return (
+                      <Details
+                        title={
+                          memos.cardDetails()?.["teema_haasteet_otsikko" + el]
+                        }
+                        description={
+                          memos.cardDetails()?.["teema_haasteet_teksti" + el]
+                        }
+                        index={el}
+                      />
+                    );
+                  }}
+                </For>
+              </div>
               {/* ESIMERKIT */}
               <h3 class={style.title}>Esimerkit</h3>
               <div

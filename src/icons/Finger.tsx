@@ -5,7 +5,7 @@ type FingerProps = {
 };
 
 const Finger: Component<FingerProps> = (props) => {
-  const p = mergeProps({ size: 24 }, props);
+  const p = mergeProps({ size: 24, fill: "var(--main-color)" }, props);
   return (
     <svg
       version="1.1"

@@ -3,12 +3,13 @@ import type { Component } from "solid-js";
 import "../../webcomponent/Myytinmurskain-webcomponent";
 const Root: Component = () => {
   const props = {
-    otsikko: "Mitkä näkökulmat vaikuttavat skenaarion toteutumiseen?",
+    otsikko:
+      "Tekoäly yleistyy diagnostiikassa: tehostuuko sairaaloiden toiminta sen seurauksena?",
     oletus: "Oletus: Tekoäly yleistyy diagnostiikassa",
     seuraus: "Seuraus: Sairaaloiden toiminta tehostuu",
-    painike: "Kokeile itse painamalla tästä",
-    opasteotsikko: "Tutki näkökulmia interaktiivisella työkalulla",
-    opasteteksti: "Voit valita haluamasi näkökulman klikkaamalla sitä.",
+    painike: "Tutki näkökulmia interaktiivisella työkalulla",
+    opasteotsikko: "Näin käytät työkalua",
+    opasteteksti: "Valitse sinua kiinnostava näkökulma klikkaamalla siitä.",
     teemat:
       '["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]',
     teema_tekstivari:
@@ -67,8 +68,8 @@ const Root: Component = () => {
         otsikko="tämä on testiä!!"
         oletus="Oletus: Tekoäly yleistyy diagnostiikassa"
         seuraus="Seuraus: Sairaaloiden toiminta tehostuu"
-        painike="Kokeile itse painamalla tästä"
-        opasteotsikko="Tutki näkökulmia interaktiivisella työkalulla"
+        painike="Tutki näkökulmia interaktiivisella työkalulla"
+        opasteotsikko="Näin käytät työkalua"
         opasteteksti="Voit valita haluamasi näkökulman klikkaamalla sitä."
         teemat='["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]'
         teema_tekstivari='["var(--main-text-color)", "var(--secondary-text-color)", "var(--tertiary-text-color)", "var(--quaternary-text-color)", "var(--quinary-text-color)", "var(--senary-text-color)"]'

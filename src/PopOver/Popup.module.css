@@ -70,7 +70,7 @@
     margin: 0;
     width: 32px;
     background: lightgray;
-    border-radius: 8px;
+    border-radius: 0px;
     border: 1px solid lightgray;
     position: absolute;
     right: 0;
@@ -81,7 +81,7 @@
   }
   .dialog__title {
     font-size: 24px;
-    font-weight: 700;
+    font-family: 'Campton Medium', sans-serif;
     margin: 0 0 16px 0;
     color: hsl(240 6% 10%);
   }
@@ -145,29 +145,41 @@
     }
   }
 
+
+  .details__container {
+    margin-top: 16px;
+    background-color: #f1f1f1;
+
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+  }
+
 .details__title {
   font-size: 20px;
-  font-weight: 600;
-  margin: 16px 0 0 0;
+  font-family: 'Campton Medium', sans-serif;
+  margin: 8px 0 4px 0;
+}
+
+.details__subtitle {
+  display: block;
+  font-style: italic;
+  color: gray;
+  font-weight: 400;
+  margin: 0 0 12px 0;
+  font-size: 12px;
 }
 
   .details {
-    padding: 8px 0;
     cursor: pointer;
   }
 
-  .details[open] .additionalText {
-    display: none;
-  }
 
   .details p {
     margin: 8px 0 24px 0;
-    line-height: 1.25;
+    line-height: 1.45;
   }
 
-  .dialog__description details[open] summary {
-    margin: 0;
-  }
 
   .dialog__header__title {
     font-size: 24px;
@@ -175,12 +187,9 @@
   }
 
   .details__description {
-    line-height: 1.25;
+    line-height: 1.45;
   }
 
-  .dialog__description details[open] {
-    margin: 0;
-  }
 
   .additionalText {
     display: block;
@@ -193,9 +202,10 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 8px;
+    font-family: 'Campton Medium', sans-serif;
   }
 
   .content {
-    line-height: 1.25;
+    line-height: 1.45;
     margin-bottom: 16px;
   }

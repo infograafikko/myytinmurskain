@@ -8,11 +8,12 @@ import SelectNumber from "./SelectNumber/SelectNumber";
 import TextAreaWordpress from "./TextAreaWordpress/TextAreaWordpress";
 const Root: Component = () => {
   const props = {
-    otsikko: "Mitkä näkökulmat vaikuttavat skenaarion toteutumiseen?",
+    otsikko:
+      "Tekoäly yleistyy diagnostiikassa: tehostuuko sairaaloiden toiminta sen seurauksena?",
     oletus: "Oletus: Tekoäly yleistyy diagnostiikassa",
     seuraus: "Seuraus: Sairaaloiden toiminta tehostuu",
-    painike: "Kokeile itse painamalla tästä",
-    opasteotsikko: "Tutki näkökulmia interaktiivisella työkalulla",
+    painike: "Tutki näkökulmia interaktiivisella työkalulla",
+    opasteotsikko: "Näin käytät työkalua",
     opasteteksti: "Voit valita haluamasi näkökulman klikkaamalla sitä.",
     teemat:
       '["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]',

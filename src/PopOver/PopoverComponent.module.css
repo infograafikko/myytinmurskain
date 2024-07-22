@@ -36,6 +36,20 @@
 
 }
 
+.skipButton {
+  position: relative;
+  font-family: "Campton Book";
+  font-size: 16px;
+  margin: 8px 0 16px 0;
+  border: 0;
+  z-index: 20;
+  background-color: var(--main-color);
+  padding: 12px;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
 .arrow {
    left: 50% !important;
 }
@@ -45,7 +59,6 @@
     width: 70vw;
     margin: auto;
     border: 1px solid hsl(240 5% 84%);
-    border-radius: 6px;
     padding: 12px;
     background-color: white;
     left: 0;
@@ -81,13 +94,46 @@
     font-size: 24px;
     font-weight: 700;
     color: hsl(240 6% 10%);
-    margin: 16px 0 8px 0;
+    margin: 8px 0 8px 0;
+    line-height: 1.25;
 
   }
   .description {
     font-size: 14px;
     color: hsl(240 5% 26%);
+    margin: 0px 0 8px 0;
+    line-height: 1.45;
   }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 8px 0 8px 0;
+  }
+
+  .button {
+    background-color: var(--main-color);
+    color: black;
+    border: 1px solid black;
+    padding: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .buttonPrimary {
+    background-color: var(--main-color);
+    color: black;
+  }
+
+  .buttonSecondary {
+    background-color: var(--white-color);
+    color: var(--gray-text-color);
+    border: 1px solid var(--gray-text-color);
+  }
+
   @keyframes contentShow {
     from {
       opacity: 0;
@@ -109,3 +155,21 @@
     }
   }
   
+  .cursorContainer {
+    position: absolute;
+    width: 100%;
+    top: -48px;
+    left: 50%;
+    animation: cursorPulse 2s infinite;
+    transform-origin: 0%;
+    pointer-events: none;
+  }
+
+  @keyframes cursorPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }

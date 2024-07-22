@@ -10,7 +10,9 @@ const DataContext = createContext();
 export function DataProvider(props: { children: JSX.Element }) {
   const [state, setState] = createStore<StateType>({
     cards: defaultCards,
+    tutorialStage: 0,
     selectedCard: 2,
+    middleCard: 2,
     showLayers: false,
     cardsRef: null,
     popupOpen: false,
@@ -58,8 +60,10 @@ export function DataProvider(props: { children: JSX.Element }) {
   const actions: ActionsType = {
     setSelectedCard: (index) =>
       setState({ selectedCard: index, popupOpen: true }),
+    setTutorialStage: (stage) => setState({ tutorialStage: stage }),
     setShowLayers: (show) => setState({ showLayers: show }),
     setCardsRef: (ref) => setState({ cardsRef: ref }),
+    setMiddleCard: (index) => setState({ middleCard: index }),
     setPopupOpen: (open) => setState({ popupOpen: open }),
     setTexts: (data) => {
       setState(
