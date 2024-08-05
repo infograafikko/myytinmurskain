@@ -18,6 +18,9 @@ const Layers = (props) => {
         height: state.showLayers ? "100%" : "0",
       }}
     >
+      <p class={styles.tutorialText}>
+        Paina näkökulmasta lukeaksesi siitä lisää
+      </p>
       <svg
         class={styles.layers}
         viewBox="0 0 100 90"

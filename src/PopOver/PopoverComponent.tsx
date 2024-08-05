@@ -20,7 +20,7 @@ const infos = [
   {
     title: "Näin käytät työkalua 3/3",
     description:
-      "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa teemoja lukeaksesi niistä lisää.**",
+      "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
     placement: "bottom-start",
   },
 ];

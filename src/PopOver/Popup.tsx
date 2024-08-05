@@ -104,7 +104,7 @@ const Popup: Component<DialogProps> = (props) => {
                 </For>
               </div>
               {/* ESIMERKIT */}
-              <h3 class={style.title}>Esimerkit</h3>
+              <h3 class={style.title}>Esimerkkejä</h3>
               <div
                 class={style.content}
                 innerHTML={snarkdown(memos.cardDetails()?.teema_esimerkit)}
