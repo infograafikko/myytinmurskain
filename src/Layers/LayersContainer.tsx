@@ -35,7 +35,6 @@ const Layers = (props) => {
           }}
           style={{
             opacity: state.tutorialStage === 2 ? 1 : 0,
-            display: state.tutorialStage === 2 ? "block" : "none",
           }}
         >
           <Cursor size={64} />
