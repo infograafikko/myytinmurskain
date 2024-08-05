@@ -1,4 +1,4 @@
-import { type Component, Match, Switch, Show } from "solid-js";
+import { type Component, Match, Switch, Show, createSignal } from "solid-js";
 import { Popover } from "@kobalte/core/popover";
 import styles from "./PopoverComponent.module.css";
 import { useDataContext } from "../DataContext";
@@ -71,18 +71,13 @@ const PopoverBuilder: Component = (props) => {
                   onClick={() => {
                     props.setTutorialStage(3);
                   }}
-                  title="Ohita käyttöopas ja siirry työkaluun"
+                  title="Ohita käyttopas ja siirry työkaluun"
                 >
-                  Ohita käyttopas
+                  Ohita käyttöopas
                 </button>
               </Show>
             </div>
           </Popover.Description>
-          <Show when={props.tutorialStage === 2}>
-            <div class={styles.cursorContainer}>
-              <Cursor size={64} />
-            </div>
-          </Show>
         </Popover.Content>
       </Popover>
     </div>

@@ -6,6 +6,7 @@ import Cursor from "../icons/Cursor";
 const Layers = (props) => {
   const { state, actions } = useDataContext();
 
+  createEffect(() => console.log(state.tutorialStage));
   return (
     <div
       classList={{
@@ -24,6 +25,19 @@ const Layers = (props) => {
       >
         <g ref={actions.setCardsRef}>{props.children}</g>
       </svg>
+      <Show when={state.tutorialStage >= 2}>
+        <div
+          classList={{
+            [styles.cursorContainer]: true,
+          }}
+          style={{
+            opacity: state.tutorialStage === 2 ? 1 : 0,
+            display: state.tutorialStage === 2 ? "block" : "none",
+          }}
+        >
+          <Cursor size={64} />
+        </div>
+      </Show>
     </div>
   );
 };

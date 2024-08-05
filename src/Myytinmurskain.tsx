@@ -38,6 +38,7 @@ const Myytinmurskain: Component<TextType> = (props) => {
           </button>
         </Show>
       </figcaption>
+
       {/* BACK TO TUTORIAL BUTTON */}
       <Show when={state.tutorialStage === 3 && state.showLayers}>
         <button
@@ -60,6 +61,7 @@ const Myytinmurskain: Component<TextType> = (props) => {
       <Show when={state.showLayers}>
         <PopoverComponent />
       </Show>
+
       <Show when={state.showLayers}>
         <ArrowDown size={24} />
         {/* SEURAUSOTSIKKO JA KYSYMYSMERKKI */}

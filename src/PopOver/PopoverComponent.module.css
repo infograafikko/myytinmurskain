@@ -160,7 +160,7 @@
     width: 100%;
     top: -48px;
     left: 50%;
-    animation: cursorPulse 2s infinite;
+    animation: cursorPulse 1.5s infinite;
     transform-origin: 0%;
     pointer-events: none;
   }
@@ -170,6 +170,22 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
+      transform: scale(1.35);
     }
+  }
+
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  .fadeCursor {
+    opacity: 1;
+    animation: fadeOut 2s ease-out forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
   }

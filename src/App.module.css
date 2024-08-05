@@ -130,7 +130,7 @@
 }
 
 .QuestionMarkActive {
-  animation: pulse-shadow-text 2s infinite ease-in-out; /* Apply the pulse animation */
+  animation: pulse-shadow-text 1s infinite ease-in-out; /* Apply the pulse animation */
 }
 
 @keyframes pulse-shadow-text {
@@ -138,7 +138,7 @@
     transform: scale(1);
   }
   50% {
-    transform: scale(1.25);
+    transform: scale(1.5);
   }
 }
 
@@ -173,4 +173,8 @@
   font-size: 12px;
   font-weight: 700;
   color: black;
+}
+
+.fadeCursor {
+  opacity: 1;
 }
