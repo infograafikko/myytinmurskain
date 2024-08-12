@@ -13,8 +13,6 @@ const App: Component<AppProps> = (props) => {
       oletus: "Oletus: Tekoäly yleistyy diagnostiikassa",
       seuraus: "Seuraus: Sairaaloiden toiminta tehostuu",
       painike: "Tutki näkökulmia interaktiivisella työkalulla",
-      opasteotsikko: "Näin käytät työkalua",
-      opasteteksti: "Valitse sinua kiinnostava näkökulma klikkaamalla siitä.",
       teemat:
         '["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]',
       teema_tekstivari:
@@ -60,6 +58,7 @@ const App: Component<AppProps> = (props) => {
       teema_haasteet_teksti5: '["", "", "", "", ""]',
       teema_haasteet_otsikko6: '["", "", "", "", ""]',
       teema_haasteet_teksti6: '["", "", "", "", ""]',
+
       teema_esimerkit:
         '["Syöpänäytteitä tulkitseva tekoälysovellus ei havaitse näytteessä syöpää. Eettisesti toimiva lääkäri varmistaa itse, ettei näytteessä todella ole syöpää.", "Hermostuneen oloinen potilas naputtaa jalkaansa lattiaan lääkärin vastaanotolla. Raporttia laativa tekoäly poimii kuitenkin vain potilaan puhumat sanat.", "Kudosnäytteitä tulkitseva tekoäly pystyy poimimaan lukuisten näytteiden joukosta selkeät tapaukset, joiden diagnosointi on helppoa. Näin patologi ehtii tarkastaa päivän aikana aiempaa suuremman määrän näytteitä ja kustannus yhtä näytettä kohden pienenee.", "Silmänpohjakuvista, joilla diagnosoidaan diabetesta, on pystytty ennustamaan potilaan verenpainetta tai tunnistaa tupakoivia potilaita.", "Tekoälymalli saataisiin toimimaan parhaiten siten, että se koulutettaisiin tulevan käyttökohteensa tyypillisellä datalla. Esimerkiksi HUS:n käyttämä tekoälymalli koulutettaisiin HUS:n datalla. Lääkinnälliseksi laitteeksi hyväksyttyä tekoälymallia ei kuitenkaan saa jatkokouluttaa."]',
       teema_kysymykset:

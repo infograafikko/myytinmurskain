@@ -9,8 +9,14 @@ const webComponent = customElement(
     seuraus: "lorem ipsum",
     otsikko: "lorem ipsum",
     painike: "lorem ipsum",
-    opasteotsikko: "lorem ipsum",
-    opasteteksti: "lorem ipsum",
+    opasteotsikko1: "Näin käytät työkalua 1/3",
+    opasteteksti1: "Ylhäällä näet skenaarion oletuksen",
+    opasteotsikko2: "Näin käytät työkalua 2/3",
+    opasteteksti2:
+      "Alhaalla näet oletuksen seurauksen. Otsikon perässä oleva kysymysmerkki indikoi ennusteeseen liittyvää epävarmuutta.",
+    opasteotsikko3: "Näin käytät työkalua 3/3",
+    opasteteksti3:
+      "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
     teemat:
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
     teema_tekstivari:

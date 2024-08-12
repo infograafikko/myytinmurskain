@@ -10,7 +10,6 @@ import ArrowDown from "./icons/ArrowDown";
 
 const Myytinmurskain: Component<TextType> = (props) => {
   const { state, actions } = useDataContext();
-  console.log(state, actions, props);
 
   createEffect(() => {
     actions.setTexts(props);

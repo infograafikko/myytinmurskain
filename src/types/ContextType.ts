@@ -16,8 +16,12 @@ export type TextType = {
     oletus: string | undefined;
     seuraus: string | undefined;
     painike: string | undefined;
-    opasteotsikko: string | undefined;
-    opasteteksti: string | undefined;
+    opasteotsikko1: string | undefined;
+    opasteteksti1: string | undefined;
+    opasteotsikko2: string | undefined;
+    opasteteksti2: string | undefined;
+    opasteotsikko3: string | undefined;
+    opasteteksti3: string | undefined;
     teemat: string | undefined; //stringified array
     teema_tekstivari: string | undefined; //stringified array
     teema_taustavari: string | undefined; //stringified array

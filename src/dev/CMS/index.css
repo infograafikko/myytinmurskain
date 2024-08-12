@@ -29,6 +29,24 @@ body {
     padding: 0 0 48px 0;
     margin: 0;
     width: 100vw;
+    --main-color: #FFEC2D;
+    --secondary-color: #B6D2BE;
+    --tertiary-color: #A7A375;
+    --quaternary-color: #4b624b;
+    --quinary-color: #CAA1A6;
+    --senary-color: #CA6C38;
+    --dark-gray-color: #333333;
+    --gray-color: #CCCCCC;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+    --main-text-color: black;
+    --secondary-text-color: black;
+    --tertiary-text-color: white;
+    --quaternary-text-color: white;
+    --quinary-text-color: black;
+    --senary-text-color: white;
+    --gray-text-color: #676767;
+    --white-color: #FFFFFF;
 }
 
 code {

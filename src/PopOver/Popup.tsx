@@ -16,7 +16,7 @@ const Details = (props: {
 }) => {
   return (
     <Show when={props?.title?.length > 0}>
-      <details class={style.details}>
+      <details class={style.details} open={props.index === 1}>
         <summary>{props.title}</summary>
         <p innerHTML={snarkdown(props.description)} />
       </details>
@@ -27,7 +27,6 @@ const Details = (props: {
 const Popup: Component<DialogProps> = (props) => {
   const { state, actions, memos } = useDataContext();
 
-  createEffect(() => console.log(memos.cardDetails()));
   return (
     <Dialog
       open={state.popupOpen}

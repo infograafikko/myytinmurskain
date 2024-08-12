@@ -3,27 +3,6 @@ import { Popover } from "@kobalte/core/popover";
 import styles from "./PopoverComponent.module.css";
 import { useDataContext } from "../DataContext";
 import snarkdown from "snarkdown";
-import Cursor from "../icons/Cursor";
-
-const infos = [
-  {
-    title: "Näin käytät työkalua 1/3",
-    description: "Ylhäällä näet skenaarion oletuksen",
-    placement: "bottom-start",
-  },
-  {
-    title: "Näin käytät työkalua 2/3",
-    description:
-      "Alhaalla näet oletuksen seurauksen. Otsikon perässä oleva kysymysmerkki indikoi ennusteeseen liittyvää epävarmuutta.",
-    placement: "top-start",
-  },
-  {
-    title: "Näin käytät työkalua 3/3",
-    description:
-      "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
-    placement: "bottom-start",
-  },
-];
 
 const PopoverBuilder: Component = (props) => {
   return (
@@ -71,7 +50,7 @@ const PopoverBuilder: Component = (props) => {
                   onClick={() => {
                     props.setTutorialStage(3);
                   }}
-                  title="Ohita käyttopas ja siirry työkaluun"
+                  title="Ohita käyttöopas ja siirry työkaluun"
                 >
                   Ohita käyttöopas
                 </button>
@@ -84,7 +63,7 @@ const PopoverBuilder: Component = (props) => {
   );
 };
 
-const PopoverComponent: Component = () => {
+const PopoverComponent: Component = (props) => {
   const { state, actions } = useDataContext();
 
   const ref = () => {
@@ -100,16 +79,18 @@ const PopoverComponent: Component = () => {
     }
   };
 
-  const currentCard = () => infos[state.tutorialStage];
+  console.log(state.texts);
+
+  const currentCard = () => state.texts;
 
   return (
     <Switch>
       <Match when={state.tutorialStage === 0}>
         <PopoverBuilder
           ref={ref}
-          placement={currentCard().placement}
-          title={currentCard().title}
-          description={currentCard().description}
+          placement={"bottom-start"}
+          title={currentCard()?.["opasteotsikko1"]}
+          description={currentCard()?.["opasteteksti1"]}
           setTutorialStage={actions.setTutorialStage}
           tutorialStage={state.tutorialStage}
         />
@@ -117,9 +98,9 @@ const PopoverComponent: Component = () => {
       <Match when={state.tutorialStage === 1}>
         <PopoverBuilder
           ref={ref}
-          placement={currentCard().placement}
-          title={currentCard().title}
-          description={currentCard().description}
+          placement={"top-start"}
+          title={currentCard()?.["opasteotsikko2"]}
+          description={currentCard()?.["opasteteksti2"]}
           setTutorialStage={actions.setTutorialStage}
           tutorialStage={state.tutorialStage}
         />
@@ -127,9 +108,9 @@ const PopoverComponent: Component = () => {
       <Match when={state.tutorialStage === 2}>
         <PopoverBuilder
           ref={ref}
-          placement={currentCard().placement}
-          title={currentCard().title}
-          description={currentCard().description}
+          placement={"bottom-start"}
+          title={currentCard()?.["opasteotsikko3"]}
+          description={currentCard()?.["opasteteksti3"]}
           setTutorialStage={actions.setTutorialStage}
           tutorialStage={state.tutorialStage}
         />

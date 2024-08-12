@@ -21,8 +21,12 @@ export function DataProvider(props: { children: JSX.Element }) {
       seuraus: undefined,
       otsikko: undefined,
       painike: undefined,
-      opasteotsikko: undefined,
-      opasteteksti: undefined,
+      opasteotsikko1: undefined,
+      opasteotsikko2: undefined,
+      opasteotsikko3: undefined,
+      opasteteksti1: undefined,
+      opasteteksti2: undefined,
+      opasteteksti3: undefined,
       teemat: undefined,
       teema_kuvaus: undefined,
       teema_tekstivari: undefined,
@@ -71,7 +75,7 @@ export function DataProvider(props: { children: JSX.Element }) {
           for (const key in data) {
             if (data.hasOwnProperty(key) && key in state.texts) {
               const textKey = key as keyof typeof state.texts; // Ensure key is a valid key of TextType
-              console.log(data[key]);
+
               if (textKey) {
                 // Check if data[key] is a string that starts with '[' and ends with ']'
                 if (

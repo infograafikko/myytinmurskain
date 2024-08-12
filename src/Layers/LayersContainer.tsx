@@ -1,4 +1,11 @@
-import { mergeProps, createEffect, onCleanup, Show, For } from "solid-js";
+import {
+  mergeProps,
+  createEffect,
+  onCleanup,
+  Show,
+  For,
+  Index,
+} from "solid-js";
 import styles from "./Layers.module.css";
 import { useDataContext } from "../DataContext";
 import SingleLayer from "./SingleLayer";
@@ -6,7 +13,6 @@ import Cursor from "../icons/Cursor";
 const Layers = (props) => {
   const { state, actions } = useDataContext();
 
-  createEffect(() => console.log(state.tutorialStage));
   return (
     <div
       classList={{
@@ -49,33 +55,33 @@ const LayersContainer = () => {
 
   return (
     <Layers showLayers={state.showLayers}>
-      <For each={state.texts.teemat}>
+      <Index each={state.texts.teemat}>
         {(el, i) => {
           const totalElements = state.cards.length;
-          const invertedIndex = totalElements - 1 - i();
+          const invertedIndex = totalElements - 1 - i;
           const offset = invertedIndex * 15 + 20; // Invert the offset
           const middle = (totalElements / 2) * 15;
           return (
             <>
               <SingleLayer
-                index={i()}
+                index={i}
                 text={el}
-                textcolor={state.texts.teema_tekstivari?.[i()]}
+                textcolor={state.texts.teema_tekstivari?.[i]}
                 gradient={[
-                  state.texts.teema_taustavari?.[i()],
-                  state.texts.teema_taustavari?.[i()],
+                  state.texts.teema_taustavari?.[i],
+                  state.texts.teema_taustavari?.[i],
                 ]}
                 offset={[0, offset, 0]}
                 middle={[0, middle, 0]}
                 classList={{}}
                 class={styles.Spread}
                 showPointer={state.showLayers && state.tutorialStage >= 2}
-                fontsize={state.texts.teema_tekstikoko?.[i()]}
+                fontsize={state.texts.teema_tekstikoko?.[i]}
               />
             </>
           );
         }}
-      </For>
+      </Index>
     </Layers>
   );
 };

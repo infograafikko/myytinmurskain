@@ -1,0 +1,18 @@
+.button {
+
+    border: none;
+    padding: 8px 16px;
+    border-radius:16px;
+    cursor: pointer;
+    margin: 16px 8px;
+}
+
+.buttonAdd {
+    background-color: var(--dark-gray-color);
+    color: var(--white-color);
+}
+
+.buttonDelete {
+    background-color: var(--quinary-color);
+    color: var(--black-color);
+}

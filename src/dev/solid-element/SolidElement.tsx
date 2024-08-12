@@ -8,8 +8,14 @@ const Root: Component = () => {
     oletus: "Oletus: Tekoäly yleistyy diagnostiikassa",
     seuraus: "Seuraus: Sairaaloiden toiminta tehostuu",
     painike: "Tutki näkökulmia interaktiivisella työkalulla",
-    opasteotsikko: "Näin käytät työkalua",
-    opasteteksti: "Valitse sinua kiinnostava näkökulma klikkaamalla siitä.",
+    opasteotsikko1: "Näin käytät työkalua 1/3",
+    opasteteksti1: "Ylhäällä näet skenaarion oletuksen",
+    opasteotsikko2: "Näin käytät työkalua 2/3",
+    opasteteksti2:
+      "Alhaalla näet oletuksen seurauksen. Otsikon perässä oleva kysymysmerkki indikoi ennusteeseen liittyvää epävarmuutta.",
+    opasteotsikko3: "Näin käytät työkalua 3/3",
+    opasteteksti3:
+      "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
     teemat:
       '["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]',
     teema_tekstivari:
@@ -68,9 +74,13 @@ const Root: Component = () => {
         otsikko="tämä on testiä!!"
         oletus="Oletus: Tekoäly yleistyy diagnostiikassa"
         seuraus="Seuraus: Sairaaloiden toiminta tehostuu"
-        painike="Tutki näkökulmia interaktiivisella työkalulla"
-        opasteotsikko="Näin käytät työkalua"
-        opasteteksti="Voit valita haluamasi näkökulman klikkaamalla sitä."
+        painike="etst näkökulmia interaktiivisella työkalulla"
+        opasteotsikko1="Näin käytät työkalua 1/3"
+        opasteteksti1="Ylhäällä näet skenaarion oletuksen"
+        opasteotsikko2="Näin käytät työkalua 2/3"
+        opasteteksti2="Alhaalla näet oletuksen seurauksen. Otsikon perässä oleva kysymysmerkki indikoi ennusteeseen liittyvää epävarmuutta."
+        opasteotsikko3="Näin käytät työkalua 3/3"
+        opasteteksti3="Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**"
         teemat='["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]'
         teema_tekstivari='["var(--main-text-color)", "var(--secondary-text-color)", "var(--tertiary-text-color)", "var(--quaternary-text-color)", "var(--quinary-text-color)", "var(--senary-text-color)"]'
         teema_taustavari='["var(--main-color)", "var(--secondary-color)", "var(--tertiary-color)", "var(--quaternary-color)", "var(--quinary-color)", "var(--senary-color)"]'
