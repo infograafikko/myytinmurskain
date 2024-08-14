@@ -1,6 +1,5 @@
 import { createStore, produce } from "solid-js/store";
 import { createContext, createMemo, useContext, type JSX } from "solid-js";
-import { defaultCards } from "./ContextProvider/defaultData";
 
 import { type StateType, type ActionsType } from "./types/ContextType";
 import { cardTextProvider } from "./ContextProvider/Memos";
@@ -9,7 +8,7 @@ const DataContext = createContext();
 
 export function DataProvider(props: { children: JSX.Element }) {
   const [state, setState] = createStore<StateType>({
-    cards: defaultCards,
+    cards: [],
     tutorialStage: 0,
     selectedCard: 2,
     middleCard: 2,

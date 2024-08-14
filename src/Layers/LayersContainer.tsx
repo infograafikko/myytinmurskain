@@ -57,7 +57,7 @@ const LayersContainer = () => {
     <Layers showLayers={state.showLayers}>
       <Index each={state.texts.teemat}>
         {(el, i) => {
-          const totalElements = state.cards.length;
+          const totalElements = state.texts.teemat.length;
           const invertedIndex = totalElements - 1 - i;
           const offset = invertedIndex * 15 + 20; // Invert the offset
           const middle = (totalElements / 2) * 15;

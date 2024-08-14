@@ -12,6 +12,7 @@ const Myytinmurskain: Component<TextType> = (props) => {
   const { state, actions } = useDataContext();
 
   createEffect(() => {
+    console.log(props);
     actions.setTexts(props);
   });
 
@@ -54,7 +55,7 @@ const Myytinmurskain: Component<TextType> = (props) => {
       <Show when={state.showLayers}>
         {/* OLETUSOTSIKKO */}
         <h3 class="oletusotsikko">{state.texts.oletus}</h3>
-        <ArrowDown size={24} />
+        {/* DEPRECATED <ArrowDown size={24} /> */}
       </Show>
       <Layers />
       <Show when={state.showLayers}>
@@ -62,18 +63,18 @@ const Myytinmurskain: Component<TextType> = (props) => {
       </Show>
 
       <Show when={state.showLayers}>
-        <ArrowDown size={24} />
+        {/* DEPRECATED <ArrowDown size={24} /> */}
         {/* SEURAUSOTSIKKO JA KYSYMYSMERKKI */}
         <h3 class="seurausotsikko">
           {state.texts.seuraus}
-          <span
+          {/* DEPRECATED <span
             classList={{
               [styles.QuestionMark]: true,
               [styles.QuestionMarkActive]: state.tutorialStage === 1,
             }}
           >
             ?
-          </span>
+          </span> */}
         </h3>
       </Show>
 

@@ -93,7 +93,7 @@ export default function SelectColor(props: {
         );
       }}
     >
-      <Select.Description>Valitse näkökulma</Select.Description>
+      <Select.Description>{props.label}</Select.Description>
       <Select.Trigger class={style.select__trigger} aria-label="Fruit">
         <Select.Value class={style.select__value}>
           {colors.find((d) => d.value === thisBg())?.label}

@@ -27,10 +27,10 @@ const Root: Component = () => {
     teemat:
       '["Etiikka", "Sosiaaliset tekijät", "Talous", "Teknologia", "Regulaatio"]',
     teema_tekstivari:
-      '["var(--main-text-color)", "var(--secondary-text-color)", "var(--tertiary-text-color)", "var(--quaternary-text-color)", "var(--quinary-text-color)", "var(--senary-text-color)"]',
+      '["var(--tertiary-text-color)", "var(--secondary-text-color)", "var(--main-text-color)", "var(--quaternary-text-color)", "var(--quinary-text-color)", "var(--senary-text-color)"]',
     teema_taustavari:
-      '["var(--main-color)", "var(--secondary-color)", "var(--tertiary-color)", "var(--quaternary-color)", "var(--quinary-color)", "var(--senary-color)"]',
-    teema_tekstikoko: '["7px", "4.6px", "7px", "7px", "7px", "7px"]',
+      '["var(--tertiary-color)", "var(--secondary-color)", "var(--main-color)", "var(--quaternary-color)", "var(--quinary-color)", "var(--senary-color)"]',
+    teema_tekstikoko: '["6px", "4px", "6px", "6px", "6px", "6px"]',
     teema_kuvaus:
       '["Potilasturvallisuus, yksityisyys sekä lääkärin ammattitaito ja vastuu päätöksenteosta ovat keskeisiä asioita, kun arvioidaan tekoälyn eettistä hyväksyttävyyttä ja turvallisuutta diagnostiikkaprosessissa.", "Sosiaaliset tekijät liittyvät potilaan ja lääkärin väliseen vuorovaikutukseen, ihmisten asenteisiin sekä lääkärien ammattitaitoon ja työympäristöön. On tärkeää ymmärtää, miten sosiaaliset tekijät voivat tukea tai rajoittaa tekoälyn tehokasta integrointia terveydenhuollon prosesseihin.", "Tekoälyllä on terveydenhuollossa potentiaalia vähentää kustannuksia, tehostaa prosesseja ja siten vähentää tarvetta työvoimalle. Tekoälyn läpimurto terveydenhuollossa edellyttää vakuuttavia näyttöjä investointien kannattavuudesta ja konkreettisista kustannussäästöistä.", "Teknologinen kehitys voi parantaa diagnostiikan tarkkuutta ja nopeutta. Tekoälyn hyödyntäminen diagnostiikassa on edennyt erityisesti kuvantunnistuksessa, data-analyysissa, ennusteiden tekemisessä ja kielimalleissa. Merkittävimmät haasteet liittyvät tekoälyn luotettavuuteen ja läpinäkyvyyteen.", "Regulaatio vaikuttaa merkittävästi siihen, miten terveydenhuollon tekoälyteknologiat voidaan ottaa käyttöön. Tekniset validoinnit, kliiniset jatkotutkimukset ja potilasdataa koskeva yksityisyydensuojalainsäädäntö saattavat rajoittaa tekoälyn laajamittaista käyttöönottoa.",""]',
     teema_mahdollisuudet_otsikko1:
@@ -101,25 +101,25 @@ const Root: Component = () => {
             value={store.otsikko}
             setter={setStore}
             getterKey="otsikko"
-            label="Otsikko"
-          />
-          <TextInput
-            value={store.oletus}
-            setter={setStore}
-            getterKey="oletus"
-            label="Oletus"
-          />
-          <TextInput
-            value={store.seuraus}
-            setter={setStore}
-            getterKey="seuraus"
-            label="Seuraus"
+            label="Pääotsikko"
           />
           <TextInput
             value={store.painike}
             setter={setStore}
             getterKey="painike"
             label="Painike"
+          />
+          <TextInput
+            value={store.oletus}
+            setter={setStore}
+            getterKey="oletus"
+            label="Yläotsikko"
+          />
+          <TextInput
+            value={store.seuraus}
+            setter={setStore}
+            getterKey="seuraus"
+            label="Alaotsikko"
           />
           <TextInput
             value={store.opasteotsikko1}
@@ -420,22 +420,6 @@ const Root: Component = () => {
             getterKey="teema_taustavari"
             getterKeyText="teema_tekstivari"
             label="Teeman taustaväri (laatikko)"
-          />
-          <TextInputArray
-            index={value()}
-            value={store.teema_taustavari}
-            setter={setStore}
-            getterKey="teema_taustavari"
-            label="Teeman taustaväri (laatikko)"
-            type="singleline"
-          />
-          <TextInputArray
-            index={value()}
-            value={store.teema_tekstivari}
-            setter={setStore}
-            getterKey="teema_tekstivari"
-            label="Teeman tekstiväri"
-            type="singleline"
           />
           <TextInputArray
             index={value()}

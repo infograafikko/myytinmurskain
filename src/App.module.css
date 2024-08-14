@@ -12,7 +12,7 @@
   --white-color: #FFFFFF;
   --main-text-color: black;
   --secondary-text-color: black;
-  --tertiary-text-color: white;
+  --tertiary-text-color: black;
   --quaternary-text-color: white;
   --quinary-text-color: black;
   --senary-text-color: white;
@@ -162,7 +162,7 @@
 
 .backToTutorial {
   position: absolute;
-  right: 16px;
+  right: max(16px, calc(50% - 350px + 16px));
   top: 16px;
   cursor: pointer;
   background-color: rgba(255,255,255,0.15);
