@@ -191,7 +191,7 @@ const Root: Component = () => {
             value={store.teemat}
             setter={setStore}
             getterKey="teemat"
-            label="Teeman otsikko"
+            label="Näkökulman otsikko"
             type="singleline"
           />
           <TextInputArray
@@ -199,7 +199,7 @@ const Root: Component = () => {
             value={store.teema_kuvaus}
             setter={setStore}
             getterKey="teema_kuvaus"
-            label="Teeman kuvaus"
+            label="Näkökulman kuvaus"
             type="multiline"
           />
           <TextInputArray
@@ -207,7 +207,7 @@ const Root: Component = () => {
             value={store.teema_esimerkit}
             setter={setStore}
             getterKey="teema_esimerkit"
-            label="Teeman esimerkit (tämä teksti 'esimerkkejä' otsikon alla)"
+            label="Näkökulman esimerkit (tämä teksti 'esimerkkejä' otsikon alla)"
             type="multiline"
           />
           <TextInputArray
@@ -215,7 +215,7 @@ const Root: Component = () => {
             value={store.teema_kysymykset}
             setter={setStore}
             getterKey="teema_kysymykset"
-            label="Teeman kysymykset (tämä teksti 'Pohdittavia kysymyksiä' otsikon alla)"
+            label="Näkökulman kysymykset (tämä teksti 'Pohdittavia kysymyksiä' otsikon alla)"
             type="multiline"
           />
           <p>Mahdollisuudet</p>
@@ -419,14 +419,14 @@ const Root: Component = () => {
             setter={setStore}
             getterKey="teema_taustavari"
             getterKeyText="teema_tekstivari"
-            label="Teeman taustaväri (laatikko)"
+            label="Näkökulman taustaväri (laatikko)"
           />
           <TextInputArray
             index={value()}
             value={store.teema_tekstikoko}
             setter={setStore}
             getterKey="teema_tekstikoko"
-            label="Teeman tekstikoko (pienennä otsikkoa jos ei mahdu)"
+            label="Näkökulman tekstikoko (pienennä otsikkoa jos ei mahdu)"
             type="singleline"
           />
         </details>
