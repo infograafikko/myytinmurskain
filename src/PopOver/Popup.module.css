@@ -219,3 +219,13 @@
     line-height: 1.45;
     margin-bottom: 8px;
   }
+
+
+  .content a {
+    text-decoration: underline;
+    color: hsl(240 5% 26%);
+  }
+
+  .content a:visited {
+    color: hsl(240 5% 26%);
+  }
