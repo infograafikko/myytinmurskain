@@ -19,8 +19,7 @@ const Root: Component = () => {
     opasteotsikko1: "Näin käytät työkalua 1/3",
     opasteteksti1: "Ylhäällä näet skenaarion oletuksen",
     opasteotsikko2: "Näin käytät työkalua 2/3",
-    opasteteksti2:
-      "Alhaalla näet oletuksen seurauksen. Otsikon perässä oleva kysymysmerkki indikoi ennusteeseen liittyvää epävarmuutta.",
+    opasteteksti2: "Alhaalla näet oletuksen seurauksen.",
     opasteotsikko3: "Näin käytät työkalua 3/3",
     opasteteksti3:
       "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
@@ -32,7 +31,7 @@ const Root: Component = () => {
       '["var(--tertiary-color)", "var(--secondary-color)", "var(--main-color)", "var(--quaternary-color)", "var(--quinary-color)", "var(--senary-color)"]',
     teema_tekstikoko: '["6px", "4px", "6px", "6px", "6px", "6px"]',
     teema_kuvaus:
-      '["Potilasturvallisuus, yksityisyys sekä lääkärin ammattitaito ja vastuu päätöksenteosta ovat keskeisiä asioita, kun arvioidaan tekoälyn eettistä hyväksyttävyyttä ja turvallisuutta diagnostiikkaprosessissa.", "Sosiaaliset tekijät liittyvät potilaan ja lääkärin väliseen vuorovaikutukseen, ihmisten asenteisiin sekä lääkärien ammattitaitoon ja työympäristöön. On tärkeää ymmärtää, miten sosiaaliset tekijät voivat tukea tai rajoittaa tekoälyn tehokasta integrointia terveydenhuollon prosesseihin.", "Tekoälyllä on terveydenhuollossa potentiaalia vähentää kustannuksia, tehostaa prosesseja ja siten vähentää tarvetta työvoimalle. Tekoälyn läpimurto terveydenhuollossa edellyttää vakuuttavia näyttöjä investointien kannattavuudesta ja konkreettisista kustannussäästöistä.", "Teknologinen kehitys voi parantaa diagnostiikan tarkkuutta ja nopeutta. Tekoälyn hyödyntäminen diagnostiikassa on edennyt erityisesti kuvantunnistuksessa, data-analyysissa, ennusteiden tekemisessä ja kielimalleissa. Merkittävimmät haasteet liittyvät tekoälyn luotettavuuteen ja läpinäkyvyyteen.", "Regulaatio vaikuttaa merkittävästi siihen, miten terveydenhuollon tekoälyteknologiat voidaan ottaa käyttöön. Tekniset validoinnit, kliiniset jatkotutkimukset ja potilasdataa koskeva yksityisyydensuojalainsäädäntö saattavat rajoittaa tekoälyn laajamittaista käyttöönottoa.",""]',
+      '["Potilasturvallisuus, yksityisyys sekä lääkärin ammattitaito ja vastuu päätöksenteosta ovat keskeisiä asioita, kun arvioidaan<sup>1</sup> tekoälyn eettistä<sup>2</sup> hyväksyttävyyttä ja turvallisuutta diagnostiikkaprosessissa.", "Sosiaaliset tekijät liittyvät potilaan ja lääkärin väliseen vuorovaikutukseen, ihmisten asenteisiin sekä lääkärien ammattitaitoon ja työympäristöön. On tärkeää ymmärtää, miten sosiaaliset tekijät voivat tukea tai rajoittaa tekoälyn tehokasta integrointia terveydenhuollon prosesseihin.", "Tekoälyllä on terveydenhuollossa potentiaalia vähentää kustannuksia, tehostaa prosesseja ja siten vähentää tarvetta työvoimalle. Tekoälyn läpimurto terveydenhuollossa edellyttää vakuuttavia näyttöjä investointien kannattavuudesta ja konkreettisista kustannussäästöistä.", "Teknologinen kehitys voi parantaa diagnostiikan tarkkuutta ja nopeutta. Tekoälyn hyödyntäminen diagnostiikassa on edennyt erityisesti kuvantunnistuksessa, data-analyysissa, ennusteiden tekemisessä ja kielimalleissa. Merkittävimmät haasteet liittyvät tekoälyn luotettavuuteen ja läpinäkyvyyteen.", "Regulaatio vaikuttaa merkittävästi siihen, miten terveydenhuollon tekoälyteknologiat voidaan ottaa käyttöön. Tekniset validoinnit, kliiniset jatkotutkimukset ja potilasdataa koskeva yksityisyydensuojalainsäädäntö saattavat rajoittaa tekoälyn laajamittaista käyttöönottoa."]',
     teema_mahdollisuudet_otsikko1:
       '["Tekoäly on vain lääkärin tukiäly", "Lisää aikaa vuorovaikutukselle", "Säästetty aika on säästettyä rahaa", "Kuvantunnistuksen kehitys", "Hyväksynnät ja merkinnät lisäävät luottamusta",""]',
     teema_mahdollisuudet_teksti1:
@@ -70,9 +69,13 @@ const Root: Component = () => {
     teema_haasteet_otsikko6: '["", "", "", "", "",""]',
     teema_haasteet_teksti6: '["", "", "", "", "",""]',
     teema_esimerkit:
-      '["Syöpänäytteitä tulkitseva tekoälysovellus ei havaitse näytteessä syöpää. Eettisesti toimiva lääkäri varmistaa itse, ettei näytteessä todella ole syöpää.", "Hermostuneen oloinen potilas naputtaa jalkaansa lattiaan lääkärin vastaanotolla. Raporttia laativa tekoäly poimii kuitenkin vain potilaan puhumat sanat.", "Kudosnäytteitä tulkitseva tekoäly pystyy poimimaan lukuisten näytteiden joukosta selkeät tapaukset, joiden diagnosointi on helppoa. Näin patologi ehtii tarkastaa päivän aikana aiempaa suuremman määrän näytteitä ja kustannus yhtä näytettä kohden pienenee.", "Silmänpohjakuvista, joilla diagnosoidaan diabetesta, on pystytty ennustamaan potilaan verenpainetta tai tunnistaa tupakoivia potilaita.", "Tekoälymalli saataisiin toimimaan parhaiten siten, että se koulutettaisiin tulevan käyttökohteensa tyypillisellä datalla. Esimerkiksi HUS:n käyttämä tekoälymalli koulutettaisiin HUS:n datalla. Lääkinnälliseksi laitteeksi hyväksyttyä tekoälymallia ei kuitenkaan saa jatkokouluttaa.",""]',
+      '["Syöpänäytteitä<sup>3</sup> tulkitseva tekoälysovellus ei havaitse näytteessä syöpää. Eettisesti toimiva lääkäri varmistaa itse, ettei näytteessä todella ole syöpää.", "Hermostuneen oloinen potilas naputtaa jalkaansa lattiaan lääkärin vastaanotolla. Raporttia laativa tekoäly poimii kuitenkin vain potilaan puhumat sanat.", "Kudosnäytteitä tulkitseva tekoäly pystyy poimimaan lukuisten näytteiden joukosta selkeät tapaukset, joiden diagnosointi on helppoa. Näin patologi ehtii tarkastaa päivän aikana aiempaa suuremman määrän näytteitä ja kustannus yhtä näytettä kohden pienenee.", "Silmänpohjakuvista, joilla diagnosoidaan diabetesta, on pystytty ennustamaan potilaan verenpainetta tai tunnistaa tupakoivia potilaita.", "Tekoälymalli saataisiin toimimaan parhaiten siten, että se koulutettaisiin tulevan käyttökohteensa tyypillisellä datalla. Esimerkiksi HUS:n käyttämä tekoälymalli koulutettaisiin HUS:n datalla. Lääkinnälliseksi laitteeksi hyväksyttyä tekoälymallia ei kuitenkaan saa jatkokouluttaa."]',
     teema_kysymykset:
       '["Miten voidaan huolehtia siitä, etteivät lääkärit ulkoista päätöksentekoa tekoälylle vaan käyttävät sitä nimenomaan oman ajattelunsa tukena? Miten tekoälyn vinoumia voidaan ehkäistä?", "Miten potilaat suhtautuvat tekoälyyn? Mikä merkitys sillä on hoidon kannalta? Sairaaloiden prosessit ja toimintamallit eroavat toisistaan. Miten tämä vaikuttaa tekoälyn käyttöönottoon sairaaloissa?", "Miten pystytään osoittamaan, tuottaako tekoälyn käyttö kustannussäästöjä? Miten voidaan tunnistaa taloudellisesti kannattavimmat diagnostiset tekoälysovellukset?", "Mille diagnostiikan alueille tekoäly sopii erityisen hyvin? Mihin se sopii huonosti? Miten voitaisiin parantaa tekoälyn läpinäkyvyyttä ja selitettävyyttä, jotta lääkärit pystyisivät paremmin arvioimaan havaintojen luotettavuutta?", "Miten sääntelyä voitaisiin kehittää niin, että tekoälymallin jatkokoulutus onnistuisi?", ""]',
+    teema_linkit:
+      '["1) [Otsikko 1](https://www.google.fi), 2) [Otsikko 2](https://www.google.fi) 3) [Otsikko 3](https://www.google.fi)","","","","",""]',
+    tekstiversio:
+      "[Lue sisältö tekstimuotoisena artikkelina](https://www.google.fi)",
   };
 
   const [store, setStore] = createStore({
@@ -125,37 +128,47 @@ const Root: Component = () => {
             value={store.opasteotsikko1}
             setter={setStore}
             getterKey="opasteotsikko1"
-            label="Opasteen otsikko 1/3"
+            label="Yläotsikon opasteotsikko"
           />
           <TextInput
             value={store.opasteteksti1}
             setter={setStore}
             getterKey="opasteteksti1"
-            label="Opasteen teksti 1/3"
+            label="Yläotsikon opasteteksti"
+            mdSupport={true}
           />
           <TextInput
             value={store.opasteotsikko2}
             setter={setStore}
             getterKey="opasteotsikko2"
-            label="Opasteen otsikko 2/3"
+            label="Alaotsikon opasteotsikko"
           />
           <TextInput
             value={store.opasteteksti2}
             setter={setStore}
             getterKey="opasteteksti2"
-            label="Opasteen teksti 2/3"
+            label="Alaotsikon opasteteksti"
+            mdSupport={true}
           />
           <TextInput
             value={store.opasteotsikko3}
             setter={setStore}
             getterKey="opasteotsikko3"
-            label="Opasteen otsikko 3/3"
+            label="Korttien opasteotsikko"
           />
           <TextInput
             value={store.opasteteksti3}
             setter={setStore}
             getterKey="opasteteksti3"
-            label="Opasteen teksti 3/3"
+            label="Korttien opasteteksti"
+            mdSupport={true}
+          />
+          <TextInput
+            value={store.tekstiversio}
+            setter={setStore}
+            getterKey="tekstiversio"
+            label="Tekstiversio"
+            mdSupport={true}
           />
         </details>
       </fieldset>
@@ -201,6 +214,7 @@ const Root: Component = () => {
             getterKey="teema_kuvaus"
             label="Näkökulman kuvaus"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -209,6 +223,7 @@ const Root: Component = () => {
             getterKey="teema_esimerkit"
             label="Näkökulman esimerkit (tämä teksti 'esimerkkejä' otsikon alla)"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -217,6 +232,16 @@ const Root: Component = () => {
             getterKey="teema_kysymykset"
             label="Näkökulman kysymykset (tämä teksti 'Pohdittavia kysymyksiä' otsikon alla)"
             type="multiline"
+            mdSupport={true}
+          />
+          <TextInputArray
+            index={value()}
+            value={store.teema_linkit}
+            setter={setStore}
+            getterKey="teema_linkit"
+            label="Näkökulman lähteet (merkitse tähän 1) jne. ja tekstin sekaan <sup>1</sup>)"
+            type="multiline"
+            mdSupport={true}
           />
           <p>Mahdollisuudet</p>
           <TextInputArray
@@ -234,6 +259,7 @@ const Root: Component = () => {
             getterKey="teema_mahdollisuudet_teksti1"
             label="Kuvaus 1"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -250,6 +276,7 @@ const Root: Component = () => {
             getterKey="teema_mahdollisuudet_teksti2"
             label="Kuvaus 2"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -266,6 +293,7 @@ const Root: Component = () => {
             getterKey="teema_mahdollisuudet_teksti3"
             label="Kuvaus 3"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -282,6 +310,7 @@ const Root: Component = () => {
             getterKey="teema_mahdollisuudet_teksti4"
             label="Kuvaus 4"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -297,6 +326,7 @@ const Root: Component = () => {
             setter={setStore}
             getterKey="teema_mahdollisuudet_teksti5"
             label="Kuvaus 5"
+            mdSupport={true}
             type="multiline"
           />
           <TextInputArray
@@ -313,6 +343,7 @@ const Root: Component = () => {
             setter={setStore}
             getterKey="teema_mahdollisuudet_teksti6"
             label="Kuvaus 6"
+            mdSupport={true}
             type="multiline"
           />
           <p>Haasteet</p>
@@ -331,6 +362,7 @@ const Root: Component = () => {
             getterKey="teema_haasteet_teksti1"
             label="Kuvaus 1"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -347,6 +379,7 @@ const Root: Component = () => {
             getterKey="teema_haasteet_teksti2"
             label="Kuvaus 2"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -363,6 +396,7 @@ const Root: Component = () => {
             getterKey="teema_haasteet_teksti3"
             label="Kuvaus 3"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -379,6 +413,7 @@ const Root: Component = () => {
             getterKey="teema_haasteet_teksti4"
             label="Kuvaus 4"
             type="multiline"
+            mdSupport={true}
           />
           <TextInputArray
             index={value()}
@@ -394,6 +429,7 @@ const Root: Component = () => {
             setter={setStore}
             getterKey="teema_haasteet_teksti5"
             label="Kuvaus 5"
+            mdSupport={true}
             type="multiline"
           />
           <TextInputArray
@@ -410,6 +446,7 @@ const Root: Component = () => {
             setter={setStore}
             getterKey="teema_haasteet_teksti6"
             label="Kuvaus 6"
+            mdSupport={true}
             type="multiline"
           />
           <p>Lisäasetukset</p>

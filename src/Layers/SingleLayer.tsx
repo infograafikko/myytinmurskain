@@ -71,7 +71,15 @@ const SingleLayer = (props) => {
         cursor: props.showPointer ? "pointer" : "default",
         //"animation-delay": thisDelay,
       }}
+      role="button"
+      tabIndex={0}
       onClick={() => actions.setSelectedCard(p.index)}
+      onKeyPress={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          actions.setSelectedCard(p.index);
+        }
+      }}
+      aria-label={`Valitse kortti ${p.index}`}
     >
       <path
         d={`M0,${h / 2 + t} v${-t} L${w / 2},${0} L${w},${h / 2} v${t} L${

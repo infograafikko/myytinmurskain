@@ -16,7 +16,7 @@ const Details = (props: {
 }) => {
   return (
     <Show when={props?.title?.length > 0}>
-      <details class={style.details} open={props.index === 1}>
+      <details class={style.details}>
         <summary>{props.title}</summary>
         <p innerHTML={snarkdown(props.description)} />
       </details>
@@ -51,9 +51,11 @@ const Popup: Component<DialogProps> = (props) => {
               </Dialog.CloseButton>
             </div>
             <Dialog.Description class={style.dialog__description}>
-              <p class={style.details__description}>
-                {memos.cardDetails()?.teema_kuvaus}
-              </p>
+              <p
+                class={style.details__description}
+                innerHTML={snarkdown(memos.cardDetails()?.teema_kuvaus)}
+              />
+
               {/* MAHDOLLISUUDET */}
               <div class={style.details__container}>
                 <h3 class={style.details__title}>Mahdollisuudet</h3>
@@ -104,16 +106,36 @@ const Popup: Component<DialogProps> = (props) => {
               </div>
               {/* ESIMERKIT */}
               <h3 class={style.title}>Esimerkkejä</h3>
-              <div
-                class={style.content}
-                innerHTML={snarkdown(memos.cardDetails()?.teema_esimerkit)}
-              />
+              <div class={style.contentcontainer}>
+                <For each={memos.cardDetails()?.teema_esimerkit.split("\n\n")}>
+                  {(paragraph) => (
+                    <div
+                      class={style.content}
+                      innerHTML={snarkdown(paragraph)}
+                    />
+                  )}
+                </For>
+              </div>
               {/* KYSYMYKSET */}
               <h3 class={style.title}>Pohdittavia kysymyksiä</h3>
-              <div
-                class={style.content}
-                innerHTML={snarkdown(memos.cardDetails()?.teema_kysymykset)}
-              />
+              <For each={memos.cardDetails()?.teema_kysymykset.split("\n\n")}>
+                {(paragraph) => (
+                  <div class={style.content} innerHTML={snarkdown(paragraph)} />
+                )}
+              </For>
+
+              {/* Linkit */}
+              <Show when={memos.cardDetails()?.teema_linkit.length > 0}>
+                <h3 class={style.title}>Lähteet</h3>
+                <For each={memos.cardDetails()?.teema_linkit.split("\n\n")}>
+                  {(paragraph) => (
+                    <div
+                      class={style.content}
+                      innerHTML={snarkdown(paragraph)}
+                    />
+                  )}
+                </For>
+              </Show>
             </Dialog.Description>
           </Dialog.Content>
         </div>

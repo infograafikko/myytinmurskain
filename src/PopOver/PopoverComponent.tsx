@@ -5,6 +5,9 @@ import { useDataContext } from "../DataContext";
 import snarkdown from "snarkdown";
 
 const PopoverBuilder: Component = (props) => {
+  //if no seuraus title then add 2 steps
+  const addSteps = () => (props.seurausExist ? 1 : 2);
+
   return (
     <div class={styles.container}>
       <Popover
@@ -13,7 +16,7 @@ const PopoverBuilder: Component = (props) => {
         placement={props.placement}
         onOpenChange={(isOpen) => {
           if (!isOpen) {
-            props.setTutorialStage(props.tutorialStage + 1);
+            props.setTutorialStage(props.tutorialStage + addSteps());
           }
         }}
       >
@@ -31,7 +34,7 @@ const PopoverBuilder: Component = (props) => {
                   [styles.button]: true,
                 }}
                 onClick={() => {
-                  props.setTutorialStage(props.tutorialStage + 1);
+                  props.setTutorialStage(props.tutorialStage + addSteps());
                 }}
               >
                 <Switch>
@@ -66,12 +69,15 @@ const PopoverBuilder: Component = (props) => {
 const PopoverComponent: Component = (props) => {
   const { state, actions } = useDataContext();
 
+  const seurausExist = () => state.texts.seuraus.length > 0;
+  console.log(state.texts.seuraus.length);
+
   const ref = () => {
     if (state.tutorialStage === 0) {
       return document.querySelector(".oletusotsikko");
-    } else if (state.tutorialStage === 1) {
+    } else if (state.tutorialStage === 1 && seurausExist()) {
       return document.querySelector(".seurausotsikko");
-    } else if (state.cardsRef) {
+    } else {
       const cards = state.cardsRef.querySelectorAll("g");
       const middleIndex = Math.ceil(cards.length / 2); // Calculate the middle index
       actions.setMiddleCard(middleIndex);
@@ -93,6 +99,7 @@ const PopoverComponent: Component = (props) => {
           description={currentCard()?.["opasteteksti1"]}
           setTutorialStage={actions.setTutorialStage}
           tutorialStage={state.tutorialStage}
+          seurausExist={seurausExist()}
         />
       </Match>
       <Match when={state.tutorialStage === 1}>
@@ -103,6 +110,7 @@ const PopoverComponent: Component = (props) => {
           description={currentCard()?.["opasteteksti2"]}
           setTutorialStage={actions.setTutorialStage}
           tutorialStage={state.tutorialStage}
+          seurausExist={seurausExist()}
         />
       </Match>
       <Match when={state.tutorialStage === 2}>
@@ -113,6 +121,7 @@ const PopoverComponent: Component = (props) => {
           description={currentCard()?.["opasteteksti3"]}
           setTutorialStage={actions.setTutorialStage}
           tutorialStage={state.tutorialStage}
+          seurausExist={seurausExist()}
         />
       </Match>
     </Switch>

@@ -18,6 +18,9 @@ export default function TextInput(props: {
     >
       <TextField.Label class={style.textField__label}>
         {props.label}
+        <Show when={props.mdSupport}>
+          <span class={style.textField__label__mdSupport}> [MD-tuki]</span>
+        </Show>
       </TextField.Label>
       <div class={style.textField__inputContainer}>
         <TextField.Input class={style.textField__input} />

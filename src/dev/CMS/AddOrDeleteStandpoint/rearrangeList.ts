@@ -29,7 +29,8 @@ export const keyList = [
   "teema_haasteet_teksti5",
   "teema_haasteet_teksti6",
   "teema_esimerkit",
-  "teema_kysymykset"
+  "teema_kysymykset",
+  "teema_linkit",
 ];
 
 export const rearrangeList = (store, index) => {

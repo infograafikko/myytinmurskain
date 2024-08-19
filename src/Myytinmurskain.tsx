@@ -7,7 +7,7 @@ import { useDataContext } from "./DataContext";
 import { TextType } from "./types/ContextType";
 import Cursor from "./icons/Cursor";
 import ArrowDown from "./icons/ArrowDown";
-
+import snarkdown from "snarkdown";
 const Myytinmurskain: Component<TextType> = (props) => {
   const { state, actions } = useDataContext();
 
@@ -40,7 +40,7 @@ const Myytinmurskain: Component<TextType> = (props) => {
       </figcaption>
 
       {/* BACK TO TUTORIAL BUTTON */}
-      <Show when={state.tutorialStage === 3 && state.showLayers}>
+      <Show when={state.tutorialStage >= 3 && state.showLayers}>
         <button
           class={styles.backToTutorial}
           onClick={() => {
@@ -79,6 +79,12 @@ const Myytinmurskain: Component<TextType> = (props) => {
       </Show>
 
       <Popup open={state.popupOpen} />
+      <Show when={state.texts.tekstiversio}>
+        <p
+          class={styles.tutorialText}
+          innerHTML={snarkdown(state.texts.tekstiversio)}
+        />
+      </Show>
     </figure>
   );
 };

@@ -25,7 +25,7 @@ const Layers = (props) => {
       }}
     >
       <p class={styles.tutorialText}>
-        Paina näkökulmasta lukeaksesi siitä lisää
+        Paina otsikoita lukeaksesi näkökulmien vaikutuksista
       </p>
       <svg
         class={styles.layers}

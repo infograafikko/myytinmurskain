@@ -31,7 +31,8 @@ export const cardTextProvider = (texts: TextType, selectedCard: number) => {
         'teema_haasteet_otsikko6',
         'teema_haasteet_teksti6',
         'teema_esimerkit',
-        'teema_kysymykset'
+        'teema_kysymykset',
+        'teema_linkit',
     ]
     return keys.reduce((acc, key) => {
         acc[key] = texts[key]?.[selectedCard];

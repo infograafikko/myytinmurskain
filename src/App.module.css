@@ -179,3 +179,17 @@
 .fadeCursor {
   opacity: 1;
 }
+
+.tutorialText {
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  color: var(--gray-text-color);
+  padding: 0 8px !important;
+  margin-top: 8px !important;
+}
+
+.tutorialText a {
+  color: var(--gray-text-color);
+  text-decoration: underline;
+}

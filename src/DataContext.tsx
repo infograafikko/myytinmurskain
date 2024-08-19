@@ -57,6 +57,8 @@ export function DataProvider(props: { children: JSX.Element }) {
       teema_haasteet_teksti6: undefined,
       teema_esimerkit: undefined,
       teema_kysymykset: undefined,
+      teema_linkit: undefined,
+      tekstiversio: undefined,
     },
   });
 
