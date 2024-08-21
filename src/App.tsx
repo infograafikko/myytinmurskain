@@ -7,7 +7,14 @@ interface AppProps {
 }
 
 const App: Component<AppProps> = (props) => {
+  const dynamicProps = () => props;
+  console.log("props", props);
+  console.log("default", defaultProps);
   const newProps = mergeProps(defaultProps, props);
+  console.log("newProps", newProps);
+  createEffect(() => {
+    console.log("dynamicProps", dynamicProps());
+  });
 
   return (
     <ErrorBoundary fallback={<div>Virhe tapahtui!</div>}>

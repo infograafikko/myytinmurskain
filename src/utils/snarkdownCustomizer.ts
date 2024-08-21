@@ -1,7 +1,7 @@
 import snarkdown from "snarkdown";
 
 const customSnarkdown = (markdown: string) => {
-    console.log(markdown);
+
     //if tagged with $$ then change to <sup>{digit}</sup>
     markdown = markdown.replace(/\$\$(\d+)\$\$/g, "<sup>$1</sup>");
 

@@ -6,8 +6,16 @@
     <meta name="theme-color" content="#000000" />
     <link rel="shortcut icon" type="image/ico" href="https://infograafikko.github.io/myytinmurskain/assets/favicon-mtvwWgEY.ico" />
     <title>Myytinmurskain</title>
-    <script type="module" crossorigin src="https://infograafikko.github.io/myytinmurskain/assets/index-CYrj4prh.js"></script>
-    <link rel="stylesheet" crossorigin href="https://infograafikko.github.io/myytinmurskain/assets/index-L4BMysb6.css">
+    <script type="module" crossorigin src="https://infograafikko.github.io/myytinmurskain/assets/index-BYGv0haR.js"></script>
+    <script>
+      ['file1.css', 'file2.css', 'file3.css'].forEach(file => {
+        let link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `./docs/assets/${file}`;
+        document.head.appendChild(link);
+      });
+    </script>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
