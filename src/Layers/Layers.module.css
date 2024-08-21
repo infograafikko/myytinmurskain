@@ -8,6 +8,8 @@
   max-height: 600px;
   user-select: none;
   opacity: 0;
+  font-family: "Campton", sans-serif;
+  letter-spacing: normal;
 }
 
 .endTutorial {
