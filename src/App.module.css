@@ -166,12 +166,14 @@
 
 .backToTutorial {
   position: absolute;
-  right: max(16px, calc(50% - 350px + 16px));
+  right: max(16px, calc(50% - 400px + 16px));
   top: 16px;
   cursor: pointer;
   background-color: rgba(255,255,255,0.15);
   border: 1px solid black;
-  padding: 4px;
+  padding: 0 4px;
+  letter-spacing: normal !important;
+  line-height: 32px !important;
   border-radius: 100%;
   width: 32px;
   height: 32px;
