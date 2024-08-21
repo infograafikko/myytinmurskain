@@ -1,5 +1,6 @@
 import { TextField } from "@kobalte/core/text-field";
-import { Accessor, Setter, Show } from "solid-js";
+import { Accessor, Setter, Show, Switch, Match } from "solid-js";
+import MDtoolTip from "./MDtoolTip";
 import style from "./TextInput.module.css";
 export default function TextInput(props: {
   label: string;
@@ -19,12 +20,19 @@ export default function TextInput(props: {
       <TextField.Label class={style.textField__label}>
         {props.label}
         <Show when={props.mdSupport}>
-          <span class={style.textField__label__mdSupport}> [MD-tuki]</span>
+          <MDtoolTip />
         </Show>
       </TextField.Label>
-      <div class={style.textField__inputContainer}>
-        <TextField.Input class={style.textField__input} />
-      </div>
+      <Switch>
+        <Match when={props.type === "singleline"}>
+          <div class={style.textField__inputContainer}>
+            <TextField.Input class={style.textField__input} />
+          </div>
+        </Match>
+        <Match when={props.type === "multiline"}>
+          <TextField.TextArea class={style.textField__input} autoResize />
+        </Match>
+      </Switch>
     </TextField>
   );
 }

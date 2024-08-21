@@ -1,13 +1,6 @@
-import {
-  type Component,
-  Setter,
-  Switch,
-  Match,
-  createEffect,
-  Show,
-} from "solid-js";
+import { type Component, Setter, Switch, Match, Show } from "solid-js";
 import { TextField } from "@kobalte/core/text-field";
-
+import MDtoolTip from "./MDtoolTip";
 import style from "./TextInput.module.css";
 
 const TextInputArray: Component = (props: {
@@ -21,29 +14,9 @@ const TextInputArray: Component = (props: {
   const parsedArr = () => JSON.parse(props.value);
   const i = () => props.index - 1;
   const val = () => parsedArr()[i()];
-  let ref;
-
-  createEffect(() => {
-    const textarea = ref.querySelector("textarea");
-    if (textarea) {
-      textarea.focus();
-
-      setTimeout(() => {
-        // Add a newline at the end
-        const currentValue = textarea.value;
-        textarea.value = currentValue + "\n";
-
-        // Trigger input event
-        textarea.dispatchEvent(new Event("input", { bubbles: true }));
-
-        // Move cursor to the end
-        textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
-      }, 10);
-    }
-  });
 
   return (
-    <div ref={ref}>
+    <div>
       <TextField
         class={style.textField}
         value={val()}
@@ -57,7 +30,7 @@ const TextInputArray: Component = (props: {
         <TextField.Label class={style.textField__label}>
           {props.label}
           <Show when={props.mdSupport}>
-            <span class={style.textField__label__mdSupport}> [MD-tuki]</span>
+            <MDtoolTip />
           </Show>
         </TextField.Label>
         <Switch>

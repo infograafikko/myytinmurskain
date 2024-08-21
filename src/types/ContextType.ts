@@ -22,6 +22,7 @@ export type TextType = {
     opasteteksti2: string | undefined;
     opasteotsikko3: string | undefined;
     opasteteksti3: string | undefined;
+    tekstiversio: string | undefined; //stringified array
     teemat: string | undefined; //stringified array
     teema_tekstivari: string | undefined; //stringified array
     teema_taustavari: string | undefined; //stringified array
@@ -54,7 +55,7 @@ export type TextType = {
     teema_esimerkit: string | undefined; //stringified array
     teema_kysymykset: string | undefined; //stringified array
     teema_linkit: string | undefined; //stringified array
-    teema_tekstiversio: string | undefined; //stringified array
+    
 }
 
 export type ActionsType = {

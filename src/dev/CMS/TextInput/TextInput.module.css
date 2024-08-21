@@ -20,7 +20,7 @@
   }
   .textField__input {
     display: inline-flex;
-    width: 100%;
+    width: calc(100% - 24px);
     border-radius: 6px;
     padding: 6px 12px;
     font-size: 16px;
