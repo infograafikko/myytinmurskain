@@ -3,8 +3,8 @@ import { Dialog } from "@kobalte/core/dialog";
 import style from "./Popup.module.css";
 import Close from "../icons/Close";
 import { useDataContext } from "../DataContext";
-import snarkdown from "snarkdown";
 
+import customSnarkdown from "../utils/snarkdownCustomizer";
 type DialogProps = {
   open: boolean;
 };
@@ -18,7 +18,7 @@ const Details = (props: {
     <Show when={props?.title?.length > 0}>
       <details class={style.details}>
         <summary>{props.title}</summary>
-        <p innerHTML={snarkdown(props.description)} />
+        <p innerHTML={customSnarkdown(props.description)} />
       </details>
     </Show>
   );
@@ -53,7 +53,7 @@ const Popup: Component<DialogProps> = (props) => {
             <Dialog.Description class={style.dialog__description}>
               <p
                 class={style.details__description}
-                innerHTML={snarkdown(memos.cardDetails()?.teema_kuvaus)}
+                innerHTML={customSnarkdown(memos.cardDetails()?.teema_kuvaus)}
               />
 
               {/* MAHDOLLISUUDET */}
@@ -111,7 +111,7 @@ const Popup: Component<DialogProps> = (props) => {
                   {(paragraph) => (
                     <div
                       class={style.content}
-                      innerHTML={snarkdown(paragraph)}
+                      innerHTML={customSnarkdown(paragraph)}
                     />
                   )}
                 </For>
@@ -120,7 +120,10 @@ const Popup: Component<DialogProps> = (props) => {
               <h3 class={style.title}>Pohdittavia kysymyksiä</h3>
               <For each={memos.cardDetails()?.teema_kysymykset.split("\n\n")}>
                 {(paragraph) => (
-                  <div class={style.content} innerHTML={snarkdown(paragraph)} />
+                  <div
+                    class={style.content}
+                    innerHTML={customSnarkdown(paragraph)}
+                  />
                 )}
               </For>
 
@@ -131,7 +134,7 @@ const Popup: Component<DialogProps> = (props) => {
                   {(paragraph) => (
                     <div
                       class={style.content}
-                      innerHTML={snarkdown(paragraph)}
+                      innerHTML={customSnarkdown(paragraph)}
                     />
                   )}
                 </For>

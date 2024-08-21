@@ -7,7 +7,8 @@ import { useDataContext } from "./DataContext";
 import { TextType } from "./types/ContextType";
 import Cursor from "./icons/Cursor";
 import ArrowDown from "./icons/ArrowDown";
-import snarkdown from "snarkdown";
+
+import customSnarkdown from "./utils/snarkdownCustomizer";
 const Myytinmurskain: Component<TextType> = (props) => {
   const { state, actions } = useDataContext();
 
@@ -82,7 +83,7 @@ const Myytinmurskain: Component<TextType> = (props) => {
       <Show when={state.texts.tekstiversio}>
         <p
           class={styles.tutorialText}
-          innerHTML={snarkdown(state.texts.tekstiversio)}
+          innerHTML={customSnarkdown(state.texts.tekstiversio)}
         />
       </Show>
     </figure>

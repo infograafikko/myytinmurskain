@@ -2,8 +2,7 @@ import { type Component, Match, Switch, Show, createSignal } from "solid-js";
 import { Popover } from "@kobalte/core/popover";
 import styles from "./PopoverComponent.module.css";
 import { useDataContext } from "../DataContext";
-import snarkdown from "snarkdown";
-
+import customSnarkdown from "../utils/snarkdownCustomizer";
 const PopoverBuilder: Component = (props) => {
   //if no seuraus title then add 2 steps
   const addSteps = () => (props.seurausExist ? 1 : 2);
@@ -26,7 +25,7 @@ const PopoverBuilder: Component = (props) => {
             <Popover.Title class={styles.title}>{props.title}</Popover.Title>
           </div>
           <Popover.Description class={styles.description}>
-            <p innerHTML={snarkdown(props.description)} />
+            <p innerHTML={customSnarkdown(props.description)} />
             <div class={styles.buttonsContainer}>
               <button
                 classList={{

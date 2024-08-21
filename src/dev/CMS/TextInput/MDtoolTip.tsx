@@ -16,15 +16,14 @@ const MDtoolTip: Component = () => {
           <p>
             *<i>Kursivoitu teksti</i>*
           </p>
-          <p>[Linkin teksti](linkin osoite)</p>
+          <p>[Linkin teksti](http://www.google.fi)</p>
           <p>
-            <code>
-              &lt;a href="https://acadsci.fi/" target="_blank"&gt;Avaa linkki
-              uudella välilehdellä&lt;/a&gt;
-            </code>{" "}
+            [Linkki avautuu uudella välilehdellä, kun osoitteen perässä kaksi
+            tähteä](http://www.google.fi**)
           </p>
           <p>
-            Yläviite<sup>1</sup>: <code>Yläviite&lt;sup&gt;1&lt;/sup&gt;</code>
+            Yläviite (esim. <sup>1</sup>) syntyy, kun ympäröit numeron kahdella
+            dollarimerkillä <code>$$1$$</code>
           </p>
         </Tooltip.Content>
       </Tooltip.Portal>
