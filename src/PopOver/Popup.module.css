@@ -56,7 +56,10 @@
     max-height: 80vh;
     width: calc(100% - 64px);
     max-width: 600px;
+    text-align: left;
   }
+
+
 
   .dialog__content a {
     text-decoration: underline;
@@ -181,6 +184,7 @@
   font-family: 'Campton', sans-serif;
   font-weight: 700;  
   margin: 8px 0 4px 0;
+  text-align: left;
 }
 
 .details__subtitle {

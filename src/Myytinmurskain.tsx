@@ -60,8 +60,7 @@ const Myytinmurskain: Component<AppProps> = (props) => {
       </Show>
       <Show when={state.showLayers}>
         {/* OLETUSOTSIKKO */}
-        <h3 class="oletusotsikko">{state.texts.oletus}</h3>
-        {/* DEPRECATED <ArrowDown size={24} /> */}
+        <h3 class={styles.heading3 + " oletusotsikko"}>{state.texts.oletus}</h3>
       </Show>
       <Layers />
       <Show when={state.showLayers}>
@@ -71,20 +70,12 @@ const Myytinmurskain: Component<AppProps> = (props) => {
       <Show when={state.showLayers}>
         {/* DEPRECATED <ArrowDown size={24} /> */}
         {/* SEURAUSOTSIKKO JA KYSYMYSMERKKI */}
-        <h3 class="seurausotsikko">
+        <h3 class={styles.heading3 + " seurausotsikko"}>
           {state.texts.seuraus}
-          {/* DEPRECATED <span
-            classList={{
-              [styles.QuestionMark]: true,
-              [styles.QuestionMarkActive]: state.tutorialStage === 1,
-            }}
-          >
-            ?
-          </span> */}
         </h3>
       </Show>
 
-      <Show when={state.tutorialStage >= 3}>
+      <Show when={state.tutorialStage >= 3 && state.popupOpen}>
         <Popup open={state.popupOpen} />
       </Show>
       <Show when={state.texts.tekstiversio}>
