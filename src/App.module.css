@@ -65,12 +65,13 @@
 }
 
 .Title {
-  font-family: "ChassiS", serif;
+  font-family: ChassiS, serif;
   font-size: 32px;
   text-align: center; 
   padding: 8px 16px;
   margin: 16px 0;
   color: var(--gray-text-color);
+  font-weight: 400;
 }
 
 .Description {
@@ -190,6 +191,9 @@
 }
 
 .tutorialText a {
-  color: var(--gray-text-color);
+  color: var(--gray-text-color) !important;
   text-decoration: underline;
+  font-weight: 700;
+  text-decoration: none;
+  position: relative;
 }

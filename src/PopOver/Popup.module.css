@@ -60,11 +60,11 @@
 
   .dialog__content a {
     text-decoration: underline;
-    color: hsl(240 5% 26%);
+    color: hsl(240 5% 26%) !important;
   }
 
   .dialog__content a:visited {
-    color: hsl(240 5% 26%);
+    color: hsl(240 5% 26%) !important;
   }
 
   .dialog__content[data-expanded] {
@@ -233,9 +233,9 @@
 
   .content a {
     text-decoration: underline;
-    color: hsl(240 5% 26%);
+    color: hsl(240 5% 26%) !important;
   }
 
   .content a:visited {
-    color: hsl(240 5% 26%);
+    color: hsl(240 5% 26%) !important;
   }
