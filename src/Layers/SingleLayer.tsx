@@ -42,7 +42,7 @@ const Gradient = (props) => {
 };
 
 const SingleLayer = (props) => {
-  const { actions } = useDataContext();
+  const { actions, state } = useDataContext();
 
   const p = mergeProps({ offset: [0, 0, 0], size: 80, class: "Packed" }, props);
   const w = p.size,
@@ -73,7 +73,11 @@ const SingleLayer = (props) => {
       }}
       role="button"
       tabIndex={0}
-      onClick={() => actions.setSelectedCard(p.index)}
+      onClick={() => {
+        if (state.tutorialStage >= 3) {
+          actions.setSelectedCard(p.index);
+        }
+      }}
       onKeyPress={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           actions.setSelectedCard(p.index);

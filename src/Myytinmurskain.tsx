@@ -84,14 +84,16 @@ const Myytinmurskain: Component<AppProps> = (props) => {
         </h3>
       </Show>
 
-      <Popup open={state.popupOpen} />
+      <Show when={state.tutorialStage >= 3}>
+        <Popup open={state.popupOpen} />
+      </Show>
       <Show when={state.texts.tekstiversio}>
         <p
           class={styles.tutorialText}
           innerHTML={customSnarkdown(state.texts.tekstiversio)}
         />
       </Show>
-      <Show when={props?.iswebcomponent}>
+      <Show when={state?.iswebcomponent}>
         <StylesForWebcomponent css={cssStyle} />
       </Show>
     </figure>

@@ -10,7 +10,6 @@ import Cursor from "../icons/Cursor";
 
 const Layers = (props) => {
   const { state, actions } = useDataContext();
-  console.log(state);
   return (
     <div
       classList={{

@@ -1,6 +1,9 @@
-import { type Component, Match, Switch, Show, createSignal } from "solid-js";
+import { type Component, Match, Switch, Show } from "solid-js";
 import { Popover } from "@kobalte/core/popover";
 import styles from "./PopoverComponent.module.css";
+import * as cssStyle from "./PopoverComponent.module.css?inline";
+import StylesForWebcomponent from "../utils/stylesWebcomponent";
+
 import { useDataContext } from "../DataContext";
 import customSnarkdown from "../utils/snarkdownCustomizer";
 const PopoverBuilder: Component = (props) => {
@@ -10,16 +13,11 @@ const PopoverBuilder: Component = (props) => {
   return (
     <div class={styles.container}>
       <Popover
-        defaultOpen={true}
+        open={true}
         anchorRef={props.ref}
         placement={props.placement}
         sameWidth={true}
         fitViewport={false}
-        onOpenChange={(isOpen) => {
-          if (!isOpen) {
-            props.setTutorialStage(props.tutorialStage + addSteps());
-          }
-        }}
       >
         <Popover.Content class={styles.content}>
           <Popover.Arrow class={styles.arrow} />
@@ -71,61 +69,67 @@ const PopoverComponent: Component = (props) => {
   const { state, actions } = useDataContext();
 
   const seurausExist = () => state.texts.seuraus.length > 0;
-  console.log(state.texts.seuraus.length);
 
   const ref = () => {
+    const root = state.iswebcomponent
+      ? document.querySelector("myytin-murskain").shadowRoot
+      : document;
+
     if (state.tutorialStage === 0) {
-      return document.querySelector(".oletusotsikko");
+      return root.querySelector(".oletusotsikko");
     } else if (state.tutorialStage === 1 && seurausExist()) {
-      return document.querySelector(".seurausotsikko");
+      return root.querySelector(".seurausotsikko");
     } else {
-      const cards = state.cardsRef.querySelectorAll("g");
-      const middleIndex = Math.ceil(cards.length / 2); // Calculate the middle index
+      const cards = root.querySelectorAll("g");
+      const middleIndex = Math.ceil(cards.length / 2);
       actions.setMiddleCard(middleIndex);
-      return cards[middleIndex]; // Select the center card
+      return cards[middleIndex];
     }
   };
-
-  console.log(state.texts);
 
   const currentCard = () => state.texts;
 
   return (
-    <Switch>
-      <Match when={state.tutorialStage === 0}>
-        <PopoverBuilder
-          ref={ref}
-          placement={"bottom-start"}
-          title={currentCard()?.["opasteotsikko1"]}
-          description={currentCard()?.["opasteteksti1"]}
-          setTutorialStage={actions.setTutorialStage}
-          tutorialStage={state.tutorialStage}
-          seurausExist={seurausExist()}
-        />
-      </Match>
-      <Match when={state.tutorialStage === 1}>
-        <PopoverBuilder
-          ref={ref}
-          placement={"top-start"}
-          title={currentCard()?.["opasteotsikko2"]}
-          description={currentCard()?.["opasteteksti2"]}
-          setTutorialStage={actions.setTutorialStage}
-          tutorialStage={state.tutorialStage}
-          seurausExist={seurausExist()}
-        />
-      </Match>
-      <Match when={state.tutorialStage === 2}>
-        <PopoverBuilder
-          ref={ref}
-          placement={"bottom-start"}
-          title={currentCard()?.["opasteotsikko3"]}
-          description={currentCard()?.["opasteteksti3"]}
-          setTutorialStage={actions.setTutorialStage}
-          tutorialStage={state.tutorialStage}
-          seurausExist={seurausExist()}
-        />
-      </Match>
-    </Switch>
+    <>
+      <Switch>
+        <Match when={state.tutorialStage === 0}>
+          <PopoverBuilder
+            ref={ref}
+            placement={"bottom-start"}
+            title={currentCard()?.["opasteotsikko1"]}
+            description={currentCard()?.["opasteteksti1"]}
+            setTutorialStage={actions.setTutorialStage}
+            tutorialStage={state.tutorialStage}
+            seurausExist={seurausExist()}
+          />
+        </Match>
+        <Match when={state.tutorialStage === 1}>
+          <PopoverBuilder
+            ref={ref}
+            placement={"top-start"}
+            title={currentCard()?.["opasteotsikko2"]}
+            description={currentCard()?.["opasteteksti2"]}
+            setTutorialStage={actions.setTutorialStage}
+            tutorialStage={state.tutorialStage}
+            seurausExist={seurausExist()}
+          />
+        </Match>
+        <Match when={state.tutorialStage === 2}>
+          <PopoverBuilder
+            ref={ref}
+            placement={"bottom-start"}
+            title={currentCard()?.["opasteotsikko3"]}
+            description={currentCard()?.["opasteteksti3"]}
+            setTutorialStage={actions.setTutorialStage}
+            tutorialStage={state.tutorialStage}
+            seurausExist={seurausExist()}
+          />
+        </Match>
+      </Switch>
+      <Show when={state?.iswebcomponent}>
+        <StylesForWebcomponent css={cssStyle} />
+      </Show>
+    </>
   );
 };
 
