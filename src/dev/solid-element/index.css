@@ -7,14 +7,14 @@
 }
 
 @font-face {
-  font-family: 'Campton Book';
+  font-family: 'Campton';
   src: url('../../assets/fonts/CamptonBook/font.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Campton Medium';
+  font-family: 'Campton';
   src: url('../../assets/fonts/CamptonMedium/font.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
@@ -24,7 +24,7 @@
 
 /* Specific resets for your existing styles */
 body {
-  font-family: 'Campton Book', sans-serif; /* Ensuring font consistency */
+  font-family: 'Campton', sans-serif; /* Ensuring font consistency */
     
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

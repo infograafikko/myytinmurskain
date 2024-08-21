@@ -75,7 +75,8 @@
 }
 
 .Description {
-  font-family: 'Campton Medium', sans-serif;
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
   font-size: 18px;
   color: #000;
   text-align: center; 
@@ -94,7 +95,8 @@
 }
 
 .Figure h3 {
-  font-family: 'Campton Medium', sans-serif;
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
   font-size: 24px;
   color: #000;
   text-align: center; 
@@ -109,7 +111,8 @@
 
 .Button {
   position: relative;
-  font-family: "Campton Medium", sans-serif;
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
   font-size: 16px;
   margin: 0 auto;
   display: block;
