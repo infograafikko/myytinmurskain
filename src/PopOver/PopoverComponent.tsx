@@ -13,6 +13,8 @@ const PopoverBuilder: Component = (props) => {
         defaultOpen={true}
         anchorRef={props.ref}
         placement={props.placement}
+        sameWidth={true}
+        fitViewport={false}
         onOpenChange={(isOpen) => {
           if (!isOpen) {
             props.setTutorialStage(props.tutorialStage + addSteps());

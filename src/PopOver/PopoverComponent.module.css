@@ -25,15 +25,14 @@
 .container {
     
     position: absolute;
-    z-index: 15;
-    width: 100%;
+    z-index: 35;
 }
 
 .container [data-popper-positioner] {
     position: absolute;
     left: 0;
     right: 0;
-
+    min-width: auto !important;
 }
 
 .skipButton {
@@ -53,7 +52,7 @@
  
   .content {
     z-index: 50;
-    width: 70vw;
+    width: auto;
     margin: auto;
     border: 1px solid hsl(240 5% 84%);
     padding: 12px;
