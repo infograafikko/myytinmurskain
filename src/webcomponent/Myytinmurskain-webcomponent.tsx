@@ -1,5 +1,6 @@
 import MyytinmurskainApp from "../App";
-import { customElement } from "solid-element";
+import { customElement, noShadowDOM } from "solid-element";
+import { render } from "solid-js/web";
 
 const webComponent = customElement(
   "myytin-murskain",
@@ -80,7 +81,10 @@ const webComponent = customElement(
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
     tekstiversio: "[Lorem ipsum](https://www.google.fi)",
   },
-  MyytinmurskainApp
+  (props, { element }) => {
+    noShadowDOM();
+    return <MyytinmurskainApp {...props} />;
+  }
 );
 
 export { webComponent };
