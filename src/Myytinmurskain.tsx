@@ -2,18 +2,23 @@ import { type Component, Show, createEffect } from "solid-js";
 import Layers from "./Layers/LayersContainer";
 import Popup from "./PopOver/Popup";
 import PopoverComponent from "./PopOver/PopoverComponent";
+
 import styles from "./App.module.css";
+import * as cssStyle from "./App.module.css?inline";
+import StylesForWebcomponent from "./utils/stylesWebcomponent";
+
 import { useDataContext } from "./DataContext";
-import { TextType } from "./types/ContextType";
+import { AppProps } from "./types/ContextType";
 import Cursor from "./icons/Cursor";
-import ArrowDown from "./icons/ArrowDown";
 
 import customSnarkdown from "./utils/snarkdownCustomizer";
-const Myytinmurskain: Component<TextType> = (props) => {
+const Myytinmurskain: Component<AppProps> = (props) => {
   const { state, actions } = useDataContext();
 
   createEffect(() => {
-    console.log(props);
+    if (props.iswebcomponent) {
+      actions.setIsWebcomponent(true);
+    }
     actions.setTexts(props);
   });
 
@@ -85,6 +90,9 @@ const Myytinmurskain: Component<TextType> = (props) => {
           class={styles.tutorialText}
           innerHTML={customSnarkdown(state.texts.tekstiversio)}
         />
+      </Show>
+      <Show when={props?.iswebcomponent}>
+        <StylesForWebcomponent css={cssStyle} />
       </Show>
     </figure>
   );

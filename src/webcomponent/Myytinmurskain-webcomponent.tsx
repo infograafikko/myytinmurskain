@@ -4,9 +4,9 @@ import defaultProps from "../dev/data/defaultProps.ts";
 import { mergeProps } from "solid-js";
 const webComponent = customElement(
   "myytin-murskain",
-  defaultProps,
+  { ...defaultProps, iswebcomponent: true },
   (props, { element }) => {
-    noShadowDOM();
+    //noShadowDOM();
     console.log("props", props);
     console.log("default", defaultProps);
     const newProps = mergeProps(defaultProps, props);

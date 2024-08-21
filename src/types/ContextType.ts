@@ -9,6 +9,7 @@ export type StateType = {
     cardsRef: HTMLElement | null;
     popupOpen: boolean;
     texts: TextType;
+    iswebcomponent: boolean;
 }
 
 export type TextType = {
@@ -56,6 +57,10 @@ export type TextType = {
     teema_kysymykset: string | undefined; //stringified array
     teema_linkit: string | undefined; //stringified array
     
+}
+
+export type AppProps = TextType & {
+    iswebcomponent: boolean;
 }
 
 export type ActionsType = {

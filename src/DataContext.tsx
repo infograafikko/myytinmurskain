@@ -15,6 +15,7 @@ export function DataProvider(props: { children: JSX.Element }) {
     showLayers: false,
     cardsRef: null,
     popupOpen: false,
+    iswebcomponent: false,
     texts: {
       oletus: undefined,
       seuraus: undefined,
@@ -70,6 +71,7 @@ export function DataProvider(props: { children: JSX.Element }) {
     setCardsRef: (ref) => setState({ cardsRef: ref }),
     setMiddleCard: (index) => setState({ middleCard: index }),
     setPopupOpen: (open) => setState({ popupOpen: open }),
+    setIsWebcomponent: (iswebcomponent) => setState({ iswebcomponent }),
     setTexts: (data) => {
       setState(
         produce((state) => {

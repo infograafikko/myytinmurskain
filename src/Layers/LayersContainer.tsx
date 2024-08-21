@@ -1,18 +1,16 @@
-import {
-  mergeProps,
-  createEffect,
-  onCleanup,
-  Show,
-  For,
-  Index,
-} from "solid-js";
+import { Show, Index } from "solid-js";
+
+import StylesForWebcomponent from "../utils/stylesWebcomponent";
 import styles from "./Layers.module.css";
+import * as cssStyle from "./Layers.module.css?inline";
+
 import { useDataContext } from "../DataContext";
 import SingleLayer from "./SingleLayer";
 import Cursor from "../icons/Cursor";
+
 const Layers = (props) => {
   const { state, actions } = useDataContext();
-
+  console.log(state);
   return (
     <div
       classList={{
@@ -45,6 +43,9 @@ const Layers = (props) => {
         >
           <Cursor size={64} />
         </div>
+      </Show>
+      <Show when={state?.iswebcomponent}>
+        <StylesForWebcomponent css={cssStyle} />
       </Show>
     </div>
   );
