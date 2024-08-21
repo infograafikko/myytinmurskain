@@ -57,6 +57,16 @@
     width: calc(100% - 64px);
     max-width: 600px;
   }
+
+  .dialog__content a {
+    text-decoration: underline;
+    color: hsl(240 5% 26%);
+  }
+
+  .dialog__content a:visited {
+    color: hsl(240 5% 26%);
+  }
+
   .dialog__content[data-expanded] {
     animation: contentShow 300ms ease-out;
   }
