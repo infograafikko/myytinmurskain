@@ -18,6 +18,7 @@ const PopoverBuilder: Component = (props) => {
         placement={props.placement}
         sameWidth={true}
         fitViewport={false}
+        forceMount={true}
       >
         <Popover.Content class={styles.content}>
           <Popover.Arrow class={styles.arrow} />
