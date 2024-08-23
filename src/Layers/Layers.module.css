@@ -96,7 +96,7 @@
     .Spread {
       transform: translateX(var(--offset-x)) translateY(var(--offset-y)) translateZ(var(--offset-z));
       opacity: 1;
-      transition: transform 0.5s ease-out, opacity 0.25s ease-out;
+      
       margin: 16px 0;
 
 

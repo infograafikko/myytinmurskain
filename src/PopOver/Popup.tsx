@@ -34,89 +34,104 @@ const Popup: Component<DialogProps> = (props) => {
     console.log(state.popupOpen);
   });
 
+  let ref;
+
   return (
-    <>
+    <div ref={ref}>
       <Dialog
         open={state.popupOpen}
         preventScroll={true}
-        onOpenChange={() => {
+        onOpenChange={(e) => {
           actions.setPopupOpen(false);
         }}
-        forceMount={true}
       >
-        <Dialog.Overlay class={style.dialog__overlay} />
-        <div class={style.dialog__positioner}>
-          <Dialog.Content class={style.dialog__content}>
-            <div class={style.dialog__header}>
-              <Dialog.Title class={style.dialog__title}>
-                {memos.cardDetails()?.teemat}
-              </Dialog.Title>
-              <Dialog.CloseButton
-                onClick={() => actions.setPopupOpen(false)}
-                class={style["dialog__close-button"]}
-                title="Sulje popup"
-              >
-                <Close size={16} />
-              </Dialog.CloseButton>
-            </div>
-            <Dialog.Description class={style.dialog__description}>
-              <p
-                class={style.details__description}
-                innerHTML={customSnarkdown(memos.cardDetails()?.teema_kuvaus)}
-              />
+        <Dialog.Portal>
+          <Dialog.Overlay class={style.dialog__overlay} />
+          <div class={style.dialog__positioner}>
+            <Dialog.Content class={style.dialog__content}>
+              <div class={style.dialog__header}>
+                <Dialog.Title class={style.dialog__title}>
+                  {memos.cardDetails()?.teemat}
+                </Dialog.Title>
+                <Dialog.CloseButton
+                  onClick={() => actions.setPopupOpen(false)}
+                  class={style["dialog__close-button"]}
+                  title="Sulje popup"
+                >
+                  <Close size={16} />
+                </Dialog.CloseButton>
+              </div>
+              <Dialog.Description class={style.dialog__description}>
+                <p
+                  class={style.details__description}
+                  innerHTML={customSnarkdown(memos.cardDetails()?.teema_kuvaus)}
+                />
 
-              {/* MAHDOLLISUUDET */}
-              <div class={style.details__container}>
-                <h3 class={style.details__title}>Mahdollisuudet</h3>
-                <p class={style.details__subtitle}>
-                  Paina alla olevia otsikoita lukeaksesi lisää aiheesta.
-                </p>
-                <For each={[1, 2, 3, 4, 5, 6]}>
-                  {(el) => {
-                    return (
-                      <Details
-                        title={
-                          memos.cardDetails()?.[
-                            "teema_mahdollisuudet_otsikko" + el
-                          ]
-                        }
-                        description={
-                          memos.cardDetails()?.[
-                            "teema_mahdollisuudet_teksti" + el
-                          ]
-                        }
-                        index={el}
+                {/* MAHDOLLISUUDET */}
+                <div class={style.details__container}>
+                  <h3 class={style.details__title}>Mahdollisuudet</h3>
+                  <p class={style.details__subtitle}>
+                    Paina alla olevia otsikoita lukeaksesi lisää aiheesta.
+                  </p>
+                  <For each={[1, 2, 3, 4, 5, 6]}>
+                    {(el) => {
+                      return (
+                        <Details
+                          title={
+                            memos.cardDetails()?.[
+                              "teema_mahdollisuudet_otsikko" + el
+                            ]
+                          }
+                          description={
+                            memos.cardDetails()?.[
+                              "teema_mahdollisuudet_teksti" + el
+                            ]
+                          }
+                          index={el}
+                        />
+                      );
+                    }}
+                  </For>
+                </div>
+                {/* HAASTEET */}
+                <div class={style.details__container}>
+                  <h3 class={style.details__title}>Haasteet</h3>
+                  <p class={style.details__subtitle}>
+                    Paina alla olevia otsikoita lukeaksesi lisää aiheesta.
+                  </p>
+                  <For each={[1, 2, 3, 4, 5, 6]}>
+                    {(el) => {
+                      return (
+                        <Details
+                          title={
+                            memos.cardDetails()?.["teema_haasteet_otsikko" + el]
+                          }
+                          description={
+                            memos.cardDetails()?.["teema_haasteet_teksti" + el]
+                          }
+                          index={el}
+                        />
+                      );
+                    }}
+                  </For>
+                </div>
+                {/* ESIMERKIT */}
+                <h3 class={style.title}>Esimerkkejä</h3>
+                <div class={style.contentcontainer}>
+                  <For
+                    each={memos.cardDetails()?.teema_esimerkit.split("\n\n")}
+                  >
+                    {(paragraph) => (
+                      <div
+                        class={style.content}
+                        innerHTML={customSnarkdown(paragraph)}
                       />
-                    );
-                  }}
-                </For>
-              </div>
-              {/* HAASTEET */}
-              <div class={style.details__container}>
-                <h3 class={style.details__title}>Haasteet</h3>
-                <p class={style.details__subtitle}>
-                  Paina alla olevia otsikoita lukeaksesi lisää aiheesta.
-                </p>
-                <For each={[1, 2, 3, 4, 5, 6]}>
-                  {(el) => {
-                    return (
-                      <Details
-                        title={
-                          memos.cardDetails()?.["teema_haasteet_otsikko" + el]
-                        }
-                        description={
-                          memos.cardDetails()?.["teema_haasteet_teksti" + el]
-                        }
-                        index={el}
-                      />
-                    );
-                  }}
-                </For>
-              </div>
-              {/* ESIMERKIT */}
-              <h3 class={style.title}>Esimerkkejä</h3>
-              <div class={style.contentcontainer}>
-                <For each={memos.cardDetails()?.teema_esimerkit.split("\n\n")}>
+                    )}
+                  </For>
+                </div>
+                {/* KYSYMYKSET */}
+                <h3 class={style.title}>Pohdittavia kysymyksiä</h3>
+                <For each={memos.cardDetails()?.teema_kysymykset.split("\n\n")}>
                   {(paragraph) => (
                     <div
                       class={style.content}
@@ -124,38 +139,28 @@ const Popup: Component<DialogProps> = (props) => {
                     />
                   )}
                 </For>
-              </div>
-              {/* KYSYMYKSET */}
-              <h3 class={style.title}>Pohdittavia kysymyksiä</h3>
-              <For each={memos.cardDetails()?.teema_kysymykset.split("\n\n")}>
-                {(paragraph) => (
-                  <div
-                    class={style.content}
-                    innerHTML={customSnarkdown(paragraph)}
-                  />
-                )}
-              </For>
 
-              {/* Linkit */}
-              <Show when={memos.cardDetails()?.teema_linkit.length > 0}>
-                <h3 class={style.title}>Lähteet</h3>
-                <For each={memos.cardDetails()?.teema_linkit.split("\n\n")}>
-                  {(paragraph) => (
-                    <div
-                      class={style.content}
-                      innerHTML={customSnarkdown(paragraph)}
-                    />
-                  )}
-                </For>
-              </Show>
-            </Dialog.Description>
-          </Dialog.Content>
-        </div>
+                {/* Linkit */}
+                <Show when={memos.cardDetails()?.teema_linkit.length > 0}>
+                  <h3 class={style.title}>Lähteet</h3>
+                  <For each={memos.cardDetails()?.teema_linkit.split("\n\n")}>
+                    {(paragraph) => (
+                      <div
+                        class={style.content}
+                        innerHTML={customSnarkdown(paragraph)}
+                      />
+                    )}
+                  </For>
+                </Show>
+              </Dialog.Description>
+            </Dialog.Content>
+          </div>
+        </Dialog.Portal>
       </Dialog>
       <Show when={state?.iswebcomponent}>
         <StylesForWebcomponent css={cssStyle} />
       </Show>
-    </>
+    </div>
   );
 };
 
