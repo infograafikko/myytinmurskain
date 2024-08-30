@@ -1,5 +1,5 @@
 import Myytinmurskain from "../../App";
-import { type Component, onMount, createSignal } from "solid-js";
+import { type Component, onMount, createSignal, createEffect } from "solid-js";
 import { createStore } from "solid-js/store";
 import "../../webcomponent/Myytinmurskain-webcomponent";
 import TextInput from "./TextInput/TextInput";
@@ -8,12 +8,17 @@ import SelectNumber from "./Select/SelectNumber";
 import SelectColor from "./Select/SelectColor";
 import TextAreaWordpress from "./TextAreaWordpress/TextAreaWordpress";
 import AddOrDeleteStandpoint from "./AddOrDeleteStandpoint/AddOrDeleteStandpoint";
-import props from "../data/defaultProps";
+import defaultProps from "../data/defaultProps";
+
+const CACHE_KEY = "myytinmurskain_cache";
 
 const Root: Component = () => {
-  const [store, setStore] = createStore({
-    ...props,
-  });
+  const getCachedProps = () => {
+    const cached = localStorage.getItem(CACHE_KEY);
+    return cached ? JSON.parse(cached) : defaultProps;
+  };
+
+  const [store, setStore] = createStore(getCachedProps());
 
   const [value, setValue] = createSignal("1");
 
@@ -26,6 +31,10 @@ const Root: Component = () => {
         detail.open = false;
       });
     }, 0); // Short delay to ensure details are rendered
+  });
+
+  createEffect(() => {
+    localStorage.setItem(CACHE_KEY, JSON.stringify(store));
   });
 
   return (
@@ -435,7 +444,7 @@ const Root: Component = () => {
           </summary>
 
           <TextAreaWordpress
-            keys={Object.keys(props)}
+            keys={Object.keys(defaultProps)}
             store={store}
             setter={setStore}
             label="Valitse kaikki teksti ja kopioi se. Liitä Wordpressiin."

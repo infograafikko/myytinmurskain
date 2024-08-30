@@ -69,3 +69,13 @@
     font-weight: 500;
     cursor: pointer;
   }
+
+  .buttonBlack {
+    background-color: black;
+    color: white;
+  }
+
+  .buttonGray {
+    background-color: rgb(239, 239, 239);
+    color: black;
+  }

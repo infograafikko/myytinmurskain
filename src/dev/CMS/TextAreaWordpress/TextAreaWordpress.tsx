@@ -1,6 +1,7 @@
 import { TextField } from "@kobalte/core/text-field";
 import { Accessor, Setter, createSignal, createEffect } from "solid-js";
 import style from "./TextAreaWordpress.module.css";
+import ConfirmPopupWordpress from "./ConfirmPopupWordpress";
 
 export default function TextAreaWordpress(props: {
   store: Accessor<string>;
@@ -8,6 +9,8 @@ export default function TextAreaWordpress(props: {
   keys: string[];
   setter: Setter<string>;
 }) {
+  const [open, setOpen] = createSignal(false);
+
   const componentTextValue = (keys: string[]) => {
     let value = "<myytin-murskain ";
     keys.forEach((key) => {
@@ -57,6 +60,10 @@ export default function TextAreaWordpress(props: {
         <div class={style.textField__inputContainer}>
           <TextField.TextArea
             autoResize
+            onFocus={(e) => {
+              //select text
+              (e.target as HTMLTextAreaElement).select();
+            }}
             class={style.textField__input}
             value={localValue()}
             onInput={handleOnChange}
@@ -66,6 +73,25 @@ export default function TextAreaWordpress(props: {
       <button class={style.button} type="submit">
         Tallenna muutokset
       </button>
+      <button
+        classList={{
+          [style.button]: true,
+          [style.buttonBlack]: true,
+        }}
+        type="submit"
+        onClick={() => setOpen(true)}
+      >
+        Palaa alkuperäiseen dataan
+      </button>
+      <ConfirmPopupWordpress
+        open={open()}
+        onClose={() => setOpen(false)}
+        type="add"
+        store={props.store}
+        setStore={props.setter}
+        value={localValue()}
+        setValue={setLocalValue}
+      />
     </form>
   );
 }

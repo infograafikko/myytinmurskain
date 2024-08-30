@@ -1,0 +1,215 @@
+.dialog__trigger {
+    appearance: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    outline: none;
+    border-radius: 6px;
+    padding: 0 16px;
+    background-color: hsl(200 98% 39%);
+    color: white;
+    font-size: 16px;
+    line-height: 0;
+    transition: 250ms background-color;
+  }
+  .dialog__trigger:hover {
+    background-color: hsl(201 96% 32%);
+  }
+  .dialog__trigger:focus-visible {
+    outline: 2px solid hsl(200 98% 39%);
+    outline-offset: 2px;
+  }
+  .dialog__trigger:active {
+    background-color: hsl(201 90% 27%);
+  }
+  .dialog__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background-color: rgb(0 0 0 / 0.2);
+    animation: overlayHide 250ms ease 100ms forwards;
+  }
+  .dialog__overlay[data-expanded] {
+    animation: overlayShow 250ms ease;
+  }
+  .dialog__positioner {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .dialog__content {
+    z-index: 50;
+    max-width: min(calc(100vw - 16px), 500px);
+    border: 1px solid hsl(240 5% 84%);
+    border-radius: 6px;
+    padding: 16px;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    animation: contentHide 300ms ease-in forwards;
+    overflow: scroll;
+    max-height: 80vh;
+    width: calc(100% - 64px);
+    max-width: 600px;
+  }
+  .dialog__content[data-expanded] {
+    animation: contentShow 300ms ease-out;
+  }
+  .dialog__header {
+    margin: 16px 0;
+    position: relative;
+    width: initial;
+  }
+  .dialog__close-button {
+    height: 32px;
+    margin: 0;
+    width: 32px;
+    background: lightgray;
+    border-radius: 0px;
+    border: 1px solid lightgray;
+    position: absolute;
+    right: 0;
+    top: -8px;
+    cursor: pointer;
+
+
+  }
+  .dialog__title {
+    font-size: 24px;
+    font-family: 'Campton', sans-serif;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: hsl(240 6% 10%);
+  }
+  .dialog__description {
+    font-size: 16px;
+    color: hsl(240 5% 26%);
+  }
+
+  .dialog__description summary {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 4px 0;
+  }
+
+
+
+  .dialog__description .conclusion {
+    margin-top: 32px;
+  }
+
+  .dialog__description span {
+    font-size: 12px !important;
+    color: gray;
+  }
+
+
+  @keyframes overlayShow {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes overlayHide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  @keyframes contentShow {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  @keyframes contentHide {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+  }
+
+
+  .details__container {
+    margin-top: 16px;
+    background-color: #f1f1f1;
+
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #e1e1e1;
+  }
+
+.details__title {
+  font-size: 20px;
+  font-family: 'Campton', sans-serif;
+  font-weight: 700;
+  margin: 8px 0 4px 0;
+}
+
+.details__subtitle {
+  display: block;
+  font-style: italic;
+  color: gray;
+  font-weight: 400;
+  margin: 0 0 12px 0;
+  font-size: 12px;
+}
+
+  .details {
+    cursor: pointer;
+  }
+
+
+  .details p {
+    margin: 8px 0 8px 0;
+    line-height: 1.45;
+  }
+
+
+  .dialog__header__title {
+    font-size: 24px;
+    font-weight: 700;
+  }
+
+  .details__description {
+    line-height: 1.45;
+  }
+
+
+  .additionalText {
+    display: block;
+    font-style: italic;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: 'Campton', sans-serif;
+    font-weight: 700;
+  }
+
+  .content {
+    line-height: 1.45;
+    margin-bottom: 16px;
+  }
