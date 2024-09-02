@@ -71,7 +71,7 @@ const PopoverComponent: Component = (props) => {
 
   const ref = () => {
     const root = state.iswebcomponent
-      ? document.querySelector("myytin-murskain").shadowRoot
+      ? document.querySelector("nakokulmain-infograafi").shadowRoot
       : document;
 
     if (state.tutorialStage === 0) {
