@@ -12,11 +12,11 @@ export default function TextAreaWordpress(props: {
   const [open, setOpen] = createSignal(false);
 
   const componentTextValue = (keys: string[]) => {
-    let value = "<myytin-murskain ";
+    let value = "<nakokulmain-infograafi ";
     keys.forEach((key) => {
       value += `${key}='${props.store[key]}' `;
     });
-    value += "></myytin-murskain>";
+    value += "></nakokulmain-infograafi>";
     return value;
   };
 

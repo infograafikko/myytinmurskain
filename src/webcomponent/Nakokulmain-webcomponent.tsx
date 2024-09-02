@@ -1,17 +1,14 @@
-import MyytinmurskainApp from "../App";
+import NakokulmainApp from "../App.tsx";
 import { customElement, noShadowDOM } from "solid-element";
 import defaultProps from "../dev/data/defaultProps.ts";
 import { mergeProps } from "solid-js";
 const webComponent = customElement(
-  "myytin-murskain",
+  "nakokulmain-infograafi",
   { ...defaultProps, iswebcomponent: true },
   (props, { element }) => {
     //noShadowDOM();
-    console.log("props", props);
-    console.log("default", defaultProps);
     const newProps = mergeProps(defaultProps, props);
-    console.log("merged", newProps);
-    return <MyytinmurskainApp {...newProps} />;
+    return <NakokulmainApp {...newProps} />;
   }
 );
 

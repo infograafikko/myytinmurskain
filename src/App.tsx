@@ -1,6 +1,6 @@
 import { Component, ErrorBoundary, mergeProps, createEffect } from "solid-js";
 import { DataProvider } from "./DataContext";
-import Myytinmurskain from "./Myytinmurskain";
+import Nakokulmain from "./Nakokulmain";
 import defaultProps from "./dev/data/defaultProps.ts";
 
 interface AppProps {
@@ -13,7 +13,7 @@ const App: Component<AppProps> = (props) => {
   return (
     <ErrorBoundary fallback={<div>Virhe tapahtui!</div>}>
       <DataProvider>
-        <Myytinmurskain {...newProps} />
+        <Nakokulmain {...newProps} />
       </DataProvider>
     </ErrorBoundary>
   );

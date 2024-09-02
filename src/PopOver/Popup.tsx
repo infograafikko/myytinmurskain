@@ -30,14 +30,8 @@ const Details = (props: {
 const Popup: Component<DialogProps> = (props) => {
   const { state, actions, memos } = useDataContext();
 
-  createEffect(() => {
-    console.log(state.popupOpen);
-  });
-
-  let ref;
-
   return (
-    <div ref={ref}>
+    <div>
       <Dialog
         open={state.popupOpen}
         preventScroll={true}

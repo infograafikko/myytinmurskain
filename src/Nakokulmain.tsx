@@ -12,7 +12,7 @@ import { AppProps } from "./types/ContextType";
 import Cursor from "./icons/Cursor";
 
 import customSnarkdown from "./utils/snarkdownCustomizer";
-const Myytinmurskain: Component<AppProps> = (props) => {
+const Nakokulmain: Component<AppProps> = (props) => {
   const { state, actions } = useDataContext();
 
   createEffect(() => {
@@ -91,4 +91,4 @@ const Myytinmurskain: Component<AppProps> = (props) => {
   );
 };
 
-export default Myytinmurskain;
+export default Nakokulmain;

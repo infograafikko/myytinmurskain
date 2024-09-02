@@ -1,10 +1,10 @@
-import Myytinmurskain from "./App";
+import Nakokulmain from "./App";
 import type { Component } from "solid-js";
-import "./webcomponent/Myytinmurskain-webcomponent.tsx";
+import "./webcomponent/Nakokulmain-webcomponent";
 const Root: Component = () => {
   return (
     <>
-      <Myytinmurskain />
+      <Nakokulmain />
       <myytin-murskain></myytin-murskain>
     </>
   );

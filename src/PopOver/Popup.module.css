@@ -61,6 +61,7 @@
 
 
 
+
   .dialog__content a {
     text-decoration: underline;
     color: hsl(240 5% 26%) !important;
@@ -73,6 +74,31 @@
   .dialog__content[data-expanded] {
     animation: contentShow 300ms ease-out;
   }
+
+  .dialog__content ul {
+   padding-inline-start: 24px;
+   list-style-type: disc;
+   display: block;
+   margin-block-start: 1em;
+   margin-block-end: 1em;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
+  }
+
+  .dialog__content ol {
+    padding-inline-start: 24px;
+    list-style-type: decimal;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .dialog__content li {
+    margin-bottom: 8px;
+  }
+
   .dialog__header {
     margin: 16px 0;
     position: relative;

@@ -1,7 +1,7 @@
-import Myytinmurskain from "../../App";
+import Nakokulmain from "../../App";
 import { type Component, onMount, createSignal, createEffect } from "solid-js";
 import { createStore } from "solid-js/store";
-import "../../webcomponent/Myytinmurskain-webcomponent";
+import "../../webcomponent/Nakokulmain-webcomponent";
 import TextInput from "./TextInput/TextInput";
 import TextInputArray from "./TextInput/TextInputArray";
 import SelectNumber from "./Select/SelectNumber";
@@ -10,7 +10,7 @@ import TextAreaWordpress from "./TextAreaWordpress/TextAreaWordpress";
 import AddOrDeleteStandpoint from "./AddOrDeleteStandpoint/AddOrDeleteStandpoint";
 import defaultProps from "../data/defaultProps";
 
-const CACHE_KEY = "myytinmurskain_cache";
+const CACHE_KEY = "nakokulmain_cache";
 
 const Root: Component = () => {
   const getCachedProps = () => {
@@ -40,9 +40,9 @@ const Root: Component = () => {
   return (
     <>
       <figcaption>
-        <h2>Myytinmurskaimen editointityökalu</h2>
+        <h2>Näkökulmaimen editointityökalu</h2>
         <p>
-          Oheisilla valinnoilla voit reaaliaikaisesti muokata Myytinmurskainta.
+          Oheisilla valinnoilla voit reaaliaikaisesti muokata Näkökulmainta.
         </p>
       </figcaption>
       <fieldset>
@@ -451,7 +451,7 @@ const Root: Component = () => {
           />
         </details>
       </fieldset>
-      <Myytinmurskain {...store} />
+      <Nakokulmain {...store} />
     </>
   );
 };

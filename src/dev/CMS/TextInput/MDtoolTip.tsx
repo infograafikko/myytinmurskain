@@ -25,6 +25,20 @@ const MDtoolTip: Component = () => {
             Yläviite (esim. <sup>1</sup>) syntyy, kun ympäröit numeron kahdella
             dollarimerkillä <code>$$1$$</code>
           </p>
+          <div class={style.tooltip__list}>
+            <p>
+              <b>Numeroimaton lista:</b>
+            </p>
+            <p>- Listaelementti 1</p>
+            <p>- Listaelementti 2</p>
+          </div>
+          <div>
+            <p>
+              <b>Numeroitu lista:</b>
+            </p>
+            <p>1. Listaelementti 1</p>
+            <p>2. Listaelementti 2</p>
+          </div>
         </Tooltip.Content>
       </Tooltip.Portal>
     </Tooltip>

@@ -39,9 +39,7 @@ const PopoverBuilder: Component = (props) => {
               >
                 <Switch>
                   <Match when={props.tutorialStage < 2}>Seuraava</Match>
-                  <Match when={props.tutorialStage >= 2}>
-                    Siirry työkaluun
-                  </Match>
+                  <Match when={props.tutorialStage >= 2}>Aloitetaan</Match>
                 </Switch>
               </button>
               <Show when={props.tutorialStage < 2}>

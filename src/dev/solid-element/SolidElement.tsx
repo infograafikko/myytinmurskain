@@ -1,6 +1,6 @@
-import Myytinmurskain from "../../App";
+import Nakokulmain from "../../App";
 import type { Component } from "solid-js";
-import "../../webcomponent/Myytinmurskain-webcomponent";
+import "../../webcomponent/Nakokulmain-webcomponent";
 import defaultProps from "../data/defaultProps.ts";
 
 const Root: Component = () => {
@@ -10,8 +10,8 @@ const Root: Component = () => {
 
   return (
     <>
-      <Myytinmurskain {...props} />
-      <myytin-murskain {...props}></myytin-murskain>
+      <Nakokulmain {...props} />
+      <nakokulmain-infograafi {...props}></nakokulmain-infograafi>
     </>
   );
 };

@@ -1,8 +1,8 @@
-import MyytinmurskainApp from "../App";
+import NakokulmainApp from "../App";
 import { customElement } from "solid-element";
 
 const webComponent = customElement(
-  "myytin-murskain",
+  "nakokulmain-infograafi",
   {
     oletus: "lorem ipsum",
     seuraus: "lorem ipsum",
@@ -80,7 +80,7 @@ const webComponent = customElement(
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
     tekstiversio: "[Lorem ipsum](https://www.google.fi)",
   },
-  MyytinmurskainApp
+  NakokulmainApp
 );
 
 export { webComponent };

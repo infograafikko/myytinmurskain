@@ -19,7 +19,7 @@ const rollupOptions = {
 export default defineConfig(async ({command, mode}) => {
 
     const buildWebComponent = async () => {
-        const resolvedPath = "./src/webcomponent/Myytinmurskain-webcomponent.tsx"
+        const resolvedPath = "./src/webcomponent/Nakokulmain-webcomponent.tsx"
         return {
             plugins: [
                 solidPlugin()
