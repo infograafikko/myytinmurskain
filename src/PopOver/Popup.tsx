@@ -47,13 +47,15 @@ const Popup: Component<DialogProps> = (props) => {
           <div
             classList={{
               [style.dialog__positioner]: true,
-              [style.android_device_dialog__positioner]: isAndroid(),
+              //seem to work on android on wordpress site
+              //[style.android_device_dialog__positioner]: isAndroid(),
             }}
           >
             <Dialog.Content
               classList={{
                 [style.dialog__content]: true,
-                [style.android_device_dialog__content]: isAndroid(),
+                //seem to work on android on wordpress site
+                //[style.android_device_dialog__content]: isAndroid(),
               }}
             >
               <div class={style.dialog__header}>
