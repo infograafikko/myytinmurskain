@@ -23,8 +23,6 @@ const Root: Component = () => {
   const [value, setValue] = createSignal("1");
 
   onMount(() => {
-    console.log(JSON.parse(store.teemat));
-
     // Add this new effect
     setTimeout(() => {
       document.querySelectorAll("details").forEach((detail) => {
