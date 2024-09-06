@@ -49,11 +49,8 @@ const SingleLayer = (props) => {
     h = 40 * (p.size / 100),
     t = THICKNESS;
 
-  const isWebComponent = () => state.iswebcomponent;
-
-  console.log(state.iswebcomponent);
-  const gid = `gradient-${props.index}${isWebComponent() ? "" : "-notWebComponent"}`;
-  const fid = `filter-${props.index}${isWebComponent() ? "" : "-notWebComponent"}`;
+  const gid = `gradient-${props.index}`;
+  const fid = `filter-${props.index}`;
 
   const offsetX = () => p.offset[0];
   const offsetY = () => p.offset[1] - 30;
