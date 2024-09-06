@@ -102,6 +102,7 @@ const SingleLayer = (props) => {
             p.size / 100
           }), calc(-3px * ${p.size / 100})) scaleY(0.5)`,
           fill: p.textcolor,
+          "font-weight": "500",
         }}
       >
         {props.text}
