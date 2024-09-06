@@ -45,7 +45,6 @@
   }
   .dialog__content {
     z-index: 50;
-    max-width: min(calc(100vw - 16px), 500px);
     border: 1px solid hsl(240 5% 84%);
     border-radius: 6px;
     padding: 16px;
@@ -58,6 +57,15 @@
     max-width: 600px;
     text-align: left;
   }
+
+  .android_device_dialog__content {
+    width: calc(100% - 128px);
+  }
+  
+  .android_device_dialog__positioner {
+    left: -32px;
+  }
+
 
 
 

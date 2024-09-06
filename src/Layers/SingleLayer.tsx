@@ -1,4 +1,4 @@
-import { mergeProps } from "solid-js";
+import { mergeProps, createEffect } from "solid-js";
 import { useDataContext } from "../DataContext";
 
 const THICKNESS = 5;
@@ -44,32 +44,29 @@ const Gradient = (props) => {
 const SingleLayer = (props) => {
   const { actions, state } = useDataContext();
 
-  const p = mergeProps({ offset: [0, 0, 0], size: 80, class: "Packed" }, props);
+  const p = mergeProps({ offset: [0, 0, 0], size: 80 }, props);
   const w = p.size,
     h = 40 * (p.size / 100),
     t = THICKNESS;
-  const gid = `gradient-${Math.random().toString(36).substr(2, 9)}`;
-  const fid = `filter-${Math.random().toString(36).substr(2, 9)}`;
+  const gid = `gradient-${props.index}`;
+  const fid = `filter-${props.index}`;
 
-  //random between 0.1 and 1
-  const animationDelay = () =>
-    `${Math.round((Math.random() * 1 + 0.1) * 10) / 10}s`;
-
-  const thisDelay = animationDelay();
+  const offsetX = () => p.offset[0];
+  const offsetY = () => p.offset[1] - 30;
+  const offsetZ = () => p.offset[2];
 
   return (
     <g
       class={props.class}
       style={{
-        "--offset-x": `${p.offset[0]}px`,
-        "--offset-y": `${p.offset[1] - 30}px`,
-        "--offset-z": `${p.offset[2]}px`,
-        "--middle-x": `${p.middle[0]}px`,
-        "--middle-y": `${p.middle[1]}px`,
-        "--middle-z": `${p.middle[2]}px`,
-        "--size": `${props.size}px`,
+        // "--offset-x": `${offsetX()}px`,
+        // "--offset-y": `${offsetY()}px`,
+        // "--offset-z": `${offsetZ()}px`,
+        // "--middle-x": `${p.middle[0]}px`,
+        // "--middle-y": `${p.middle[1]}px`,
+        // "--middle-z": `${p.middle[2]}px`,
         cursor: props.showPointer ? "pointer" : "default",
-        //"animation-delay": thisDelay,
+        transform: `translateX(${offsetX()}px) translateY(${offsetY()}px) translateZ(${offsetZ()}px)`,
       }}
       role="button"
       tabIndex={0}

@@ -1,4 +1,4 @@
-import { Show, Index } from "solid-js";
+import { Show, Index, For } from "solid-js";
 
 import StylesForWebcomponent from "../utils/stylesWebcomponent";
 import styles from "./Layers.module.css";
@@ -52,37 +52,34 @@ const Layers = (props) => {
 
 const LayersContainer = () => {
   const { state } = useDataContext();
-
   return (
-    <Layers showLayers={state.showLayers}>
-      <Index each={state.texts.teemat}>
-        {(el, i) => {
+    <Show when={state.texts.teemat}>
+      <Layers showLayers={state.showLayers}>
+        {state.texts.teemat.map((el, i) => {
           const totalElements = state.texts.teemat.length;
           const invertedIndex = totalElements - 1 - i;
           const offset = invertedIndex * 15 + 20; // Invert the offset
           const middle = (totalElements / 2) * 15;
           return (
-            <>
-              <SingleLayer
-                index={i}
-                text={el}
-                textcolor={state.texts.teema_tekstivari?.[i]}
-                gradient={[
-                  state.texts.teema_taustavari?.[i],
-                  state.texts.teema_taustavari?.[i],
-                ]}
-                offset={[0, offset, 0]}
-                middle={[0, middle, 0]}
-                classList={{}}
-                class={styles.Spread}
-                showPointer={state.showLayers && state.tutorialStage >= 2}
-                fontsize={state.texts.teema_tekstikoko?.[i]}
-              />
-            </>
+            <SingleLayer
+              index={i}
+              text={el}
+              textcolor={state.texts.teema_tekstivari?.[i]}
+              gradient={[
+                state.texts.teema_taustavari?.[i],
+                state.texts.teema_taustavari?.[i],
+              ]}
+              offset={[0, offset, 0]}
+              middle={[0, middle, 0]}
+              classList={{}}
+              class={styles.Spread}
+              showPointer={state.showLayers && state.tutorialStage >= 2}
+              fontsize={state.texts.teema_tekstikoko?.[i]}
+            />
           );
-        }}
-      </Index>
-    </Layers>
+        })}
+      </Layers>
+    </Show>
   );
 };
 

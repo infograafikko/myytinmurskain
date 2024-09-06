@@ -82,6 +82,12 @@
   }
 }
 
+.Spread {
+  transform: translateX(var(--offset-x)) translateY(var(--offset-y)) translateZ(var(--offset-z));
+  opacity: 1;
+  margin: 16px 0;
+}
+
 .layers {
     width: 100%;
     max-width: 400px;
@@ -93,15 +99,6 @@
     position: absolute;
     z-index: 1;
 
-    .Spread {
-      transform: translateX(var(--offset-x)) translateY(var(--offset-y)) translateZ(var(--offset-z));
-      opacity: 1;
-      
-      margin: 16px 0;
-
-
-    }
-
 
     .pulse path:nth-child(1) {
       animation: pulse-shadow 2s ease-out infinite;
@@ -109,12 +106,6 @@
 
 
 
-
-    .Packed {
-      transform: translateX(var(--middle-x)) translateY(var(--middle-y)) translateZ(var(--middle-z));
-      transition: transform 0.2s ease-out;
-      opacity: 0;
-    }
 
     .g {
       transition: transform 0.2s ease-out;
@@ -151,11 +142,3 @@
     }
   }
   
-  @keyframes hover {
-    0%, 100% {
-      transform: translateX(var(--offset-x)) translateY(var(--offset-y)) translateZ(var(--offset-z));
-    }
-    50% {
-      transform: translateX(var(--offset-x)) translateY(calc(var(--offset-y) + 1px)) translateZ(var(--offset-z));
-    }
-  }

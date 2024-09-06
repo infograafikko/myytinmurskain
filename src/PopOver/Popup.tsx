@@ -30,6 +30,9 @@ const Details = (props: {
 const Popup: Component<DialogProps> = (props) => {
   const { state, actions, memos } = useDataContext();
 
+  const isAndroid = () =>
+    navigator.userAgent.match(/android/i) === null ? false : true;
+
   return (
     <div>
       <Dialog
@@ -41,8 +44,18 @@ const Popup: Component<DialogProps> = (props) => {
       >
         <Dialog.Portal>
           <Dialog.Overlay class={style.dialog__overlay} />
-          <div class={style.dialog__positioner}>
-            <Dialog.Content class={style.dialog__content}>
+          <div
+            classList={{
+              [style.dialog__positioner]: true,
+              [style.android_device_dialog__positioner]: isAndroid(),
+            }}
+          >
+            <Dialog.Content
+              classList={{
+                [style.dialog__content]: true,
+                [style.android_device_dialog__content]: isAndroid(),
+              }}
+            >
               <div class={style.dialog__header}>
                 <Dialog.Title class={style.dialog__title}>
                   {memos.cardDetails()?.teemat}
