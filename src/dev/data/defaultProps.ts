@@ -9,6 +9,8 @@ export default {
     opasteotsikko2: "Näin käytät työkalua 2/3",
     opasteteksti2: "Alhaalla näet oletuksen seurauksen.",
     opasteotsikko3: "Näin käytät työkalua 3/3",
+    teemalinkit:
+    '["1. [Otsikko 1](https://www.google.fi**)\\n2. [Otsikko 2](https://www.google.fi)\\n3. [Otsikko 3](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)",""]',
     opasteteksti3:
       "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
     teemat:
@@ -60,8 +62,6 @@ export default {
       '["Syöpänäytteitä$$3$$ tulkitseva tekoälysovellus ei havaitse näytteessä syöpää. Eettisesti toimiva lääkäri varmistaa itse, ettei näytteessä todella ole syöpää.", "Hermostuneen oloinen potilas naputtaa jalkaansa lattiaan lääkärin vastaanotolla. Raporttia laativa tekoäly poimii kuitenkin vain potilaan puhumat sanat.", "Kudosnäytteitä tulkitseva tekoäly pystyy poimimaan lukuisten näytteiden joukosta selkeät tapaukset, joiden diagnosointi on helppoa. Näin patologi ehtii tarkastaa päivän aikana aiempaa suuremman määrän näytteitä ja kustannus yhtä näytettä kohden pienenee.", "Silmänpohjakuvista, joilla diagnosoidaan diabetesta, on pystytty ennustamaan potilaan verenpainetta tai tunnistaa tupakoivia potilaita.", "Tekoälymalli saataisiin toimimaan parhaiten siten, että se koulutettaisiin tulevan käyttökohteensa tyypillisellä datalla. Esimerkiksi HUS:n käyttämä tekoälymalli koulutettaisiin HUS:n datalla. Lääkinnälliseksi laitteeksi hyväksyttyä tekoälymallia ei kuitenkaan saa jatkokouluttaa.$$2$$",""]',
     teema_kysymykset:
       '["- Miten voidaan huolehtia siitä, etteivät lääkärit ulkoista päätöksentekoa tekoälylle vaan käyttävät sitä nimenomaan oman ajattelunsa tukena?\\n- Miten tekoälyn vinoumia voidaan ehkäistä?", "- Miten potilaat suhtautuvat tekoälyyn? \\n- Mikä merkitys sillä on hoidon kannalta?\\n- Sairaaloiden prosessit ja toimintamallit eroavat toisistaan. Miten tämä vaikuttaa tekoälyn käyttöönottoon sairaaloissa?$$2$$", "- Miten pystytään osoittamaan, tuottaako tekoälyn käyttö kustannussäästöjä?\\n- Miten voidaan tunnistaa taloudellisesti kannattavimmat diagnostiset tekoälysovellukset?", "- Mille diagnostiikan alueille tekoäly sopii erityisen hyvin?\\n- Mihin se sopii huonosti?\\n- Miten voitaisiin parantaa tekoälyn läpinäkyvyyttä ja selitettävyyttä, jotta lääkärit pystyisivät paremmin arvioimaan havaintojen luotettavuutta?", "- Miten sääntelyä voitaisiin kehittää niin, että tekoälymallin jatkokoulutus onnistuisi?", ""]',
-    teema_linkit:
-      '["1. [Otsikko 1](https://www.google.fi**)\\n2. [Otsikko 2](https://www.google.fi)\\n3. [Otsikko 3](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)","1. [Otsikko 1](https://www.google.fi)\\n2. [Otsikko 2](https://www.google.fi)"]',
     tekstiversio:
       "[Lue sisältö tekstimuotoisena artikkelina](https://www.google.fi**)",
   };

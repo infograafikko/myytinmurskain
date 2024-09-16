@@ -150,9 +150,9 @@ const Popup: Component<DialogProps> = (props) => {
                 </For>
 
                 {/* Linkit */}
-                <Show when={memos.cardDetails()?.teema_linkit.length > 0}>
+                <Show when={memos.cardDetails()?.teemalinkit.length > 0}>
                   <h3 class={style.title}>Lähteet</h3>
-                  <For each={memos.cardDetails()?.teema_linkit.split("\n\n")}>
+                  <For each={memos.cardDetails()?.teemalinkit.split("\n\n")}>
                     {(paragraph) => (
                       <div
                         class={style.content}

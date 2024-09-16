@@ -13,13 +13,15 @@ import Cursor from "./icons/Cursor";
 
 import customSnarkdown from "./utils/snarkdownCustomizer";
 const Nakokulmain: Component<AppProps> = (props) => {
+  console.log("defaultProps", props);
   const { state, actions } = useDataContext();
 
   createEffect(() => {
     if (props.iswebcomponent) {
       actions.setIsWebcomponent(true);
     }
-    actions.setTexts(props);
+    console.log(props);
+    setTimeout(() => actions.setTexts(props), 0);
   });
 
   return (
