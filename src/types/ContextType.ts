@@ -55,7 +55,7 @@ export type TextType = {
     teema_haasteet_teksti6: string | undefined; //stringified array
     teema_esimerkit: string | undefined; //stringified array
     teema_kysymykset: string | undefined; //stringified array
-    teema_linkit: string | undefined; //stringified array
+    teemalinkit: string | undefined; //stringified array
     
 }
 
