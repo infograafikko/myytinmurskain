@@ -76,7 +76,7 @@ const webComponent = customElement(
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
     teema_kysymykset:
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teemalinkit:
+    teema_linkit:
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
     tekstiversio: "[Lorem ipsum](https://www.google.fi)",
   },

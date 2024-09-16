@@ -32,7 +32,7 @@ export const cardTextProvider = (texts: TextType, selectedCard: number) => {
         'teema_haasteet_teksti6',
         'teema_esimerkit',
         'teema_kysymykset',
-        'teemalinkit',
+        'teema_linkit',
     ]
     return keys.reduce((acc, key) => {
         acc[key] = texts[key]?.[selectedCard];

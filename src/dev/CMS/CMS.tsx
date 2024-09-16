@@ -195,9 +195,9 @@ const Root: Component = () => {
           />
           <TextInputArray
             index={value()}
-            value={store.teemalinkit}
+            value={store.teema_linkit}
             setter={setStore}
-            getterKey="teemalinkit"
+            getterKey="teema_linkit"
             label="Näkökulman lähteet (merkitse tähän 1) jne. ja tekstin sekaan <sup>1</sup>)"
             type="multiline"
             mdSupport={true}
