@@ -7,10 +7,7 @@ const webComponent = customElement(
   { ...defaultProps, iswebcomponent: true },
   (props, { element }) => {
     //noShadowDOM();
-    console.log("defaultProps", defaultProps);
-    console.log("props", props);
     const newProps = mergeProps(defaultProps, props);
-    console.log("newProps", newProps);
     return <NakokulmainApp {...newProps} />;
   }
 );

@@ -21,7 +21,7 @@ const Nakokulmain: Component<AppProps> = (props) => {
       actions.setIsWebcomponent(true);
     }
     console.log(props);
-    setTimeout(() => actions.setTexts(props), 0);
+    actions.setTexts(props);
   });
 
   return (
