@@ -32,6 +32,7 @@ const Root: Component = () => {
   });
 
   createEffect(() => {
+    console.log("store", store);
     localStorage.setItem(CACHE_KEY, JSON.stringify(store));
   });
 
