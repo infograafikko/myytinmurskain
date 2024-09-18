@@ -168,36 +168,36 @@ const Root: Component = () => {
           />
           <TextInputArray
             index={value()}
-            value={store.teema_kuvaus}
+            value={store["teema-kuvaus"]}
             setter={setStore}
-            getterKey="teema_kuvaus"
+            getterKey="teema-kuvaus"
             label="Näkökulman kuvaus"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_esimerkit}
+            value={store["teema-esimerkit"]}
             setter={setStore}
-            getterKey="teema_esimerkit"
+            getterKey="teema-esimerkit"
             label="Näkökulman esimerkit (tämä teksti 'esimerkkejä' otsikon alla)"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_kysymykset}
+            value={store["teema-kysymykset"]}
             setter={setStore}
-            getterKey="teema_kysymykset"
+            getterKey="teema-kysymykset"
             label="Näkökulman kysymykset (tämä teksti 'Pohdittavia kysymyksiä' otsikon alla)"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teemalinkit}
+            value={store["teema-linkit"]}
             setter={setStore}
-            getterKey="teemalinkit"
+            getterKey="teema-linkit"
             label="Näkökulman lähteet (merkitse tähän 1) jne. ja tekstin sekaan <sup>1</sup>)"
             type="multiline"
             mdSupport={true}
@@ -205,102 +205,102 @@ const Root: Component = () => {
           <p>Mahdollisuudet</p>
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_otsikko1}
+            value={store["teema-mahdollisuudet-otsikko1"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_otsikko1"
+            getterKey="teema-mahdollisuudet-otsikko1"
             label="Otsikko 1"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_teksti1}
+            value={store["teema-mahdollisuudet-teksti1"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_teksti1"
+            getterKey="teema-mahdollisuudet-teksti1"
             label="Kuvaus 1"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_otsikko2}
+            value={store["teema-mahdollisuudet-otsikko2"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_otsikko2"
+            getterKey="teema-mahdollisuudet-otsikko2"
             label="Otsikko 2"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_teksti2}
+            value={store["teema-mahdollisuudet-teksti2"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_teksti2"
+            getterKey="teema-mahdollisuudet-teksti2"
             label="Kuvaus 2"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_otsikko3}
+            value={store["teema-mahdollisuudet-otsikko3"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_otsikko3"
+            getterKey="teema-mahdollisuudet-otsikko3"
             label="Otsikko 3"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_teksti3}
+            value={store["teema-mahdollisuudet-teksti3"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_teksti3"
+            getterKey="teema-mahdollisuudet-teksti3"
             label="Kuvaus 3"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_otsikko4}
+            value={store["teema-mahdollisuudet-otsikko4"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_otsikko4"
+            getterKey="teema-mahdollisuudet-otsikko4"
             label="Otsikko 4"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_teksti4}
+            value={store["teema-mahdollisuudet-teksti4"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_teksti4"
+            getterKey="teema-mahdollisuudet-teksti4"
             label="Kuvaus 4"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_otsikko5}
+            value={store["teema-mahdollisuudet-otsikko5"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_otsikko5"
+            getterKey="teema-mahdollisuudet-otsikko5"
             label="Otsikko 5"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_teksti5}
+            value={store["teema-mahdollisuudet-teksti5"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_teksti5"
+            getterKey="teema-mahdollisuudet-teksti5"
             label="Kuvaus 5"
             mdSupport={true}
             type="multiline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_otsikko6}
+            value={store["teema-mahdollisuudet-otsikko6"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_otsikko6"
+            getterKey="teema-mahdollisuudet-otsikko6"
             label="Otsikko 6"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_mahdollisuudet_teksti6}
+            value={store["teema-mahdollisuudet-teksti6"]}
             setter={setStore}
-            getterKey="teema_mahdollisuudet_teksti6"
+            getterKey="teema-mahdollisuudet-teksti6"
             label="Kuvaus 6"
             mdSupport={true}
             type="multiline"
@@ -308,102 +308,102 @@ const Root: Component = () => {
           <p>Haasteet</p>
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_otsikko1}
+            value={store["teema-haasteet-otsikko1"]}
             setter={setStore}
-            getterKey="teema_haasteet_otsikko1"
+            getterKey="teema-haasteet-otsikko1"
             label="Otsikko 1"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_teksti1}
+            value={store["teema-haasteet-teksti1"]}
             setter={setStore}
-            getterKey="teema_haasteet_teksti1"
+            getterKey="teema-haasteet-teksti1"
             label="Kuvaus 1"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_otsikko2}
+            value={store["teema-haasteet-otsikko2"]}
             setter={setStore}
-            getterKey="teema_haasteet_otsikko2"
+            getterKey="teema-haasteet-otsikko2"
             label="Otsikko 2"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_teksti2}
+            value={store["teema-haasteet-teksti2"]}
             setter={setStore}
-            getterKey="teema_haasteet_teksti2"
+            getterKey="teema-haasteet-teksti2"
             label="Kuvaus 2"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_otsikko3}
+            value={store["teema-haasteet-otsikko3"]}
             setter={setStore}
-            getterKey="teema_haasteet_otsikko3"
+            getterKey="teema-haasteet-otsikko3"
             label="Otsikko 3"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_teksti3}
+            value={store["teema-haasteet-teksti3"]}
             setter={setStore}
-            getterKey="teema_haasteet_teksti3"
+            getterKey="teema-haasteet-teksti3"
             label="Kuvaus 3"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_otsikko4}
+            value={store["teema-haasteet-otsikko4"]}
             setter={setStore}
-            getterKey="teema_haasteet_otsikko4"
+            getterKey="teema-haasteet-otsikko4"
             label="Otsikko 4"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_teksti4}
+            value={store["teema-haasteet-teksti4"]}
             setter={setStore}
-            getterKey="teema_haasteet_teksti4"
+            getterKey="teema-haasteet-teksti4"
             label="Kuvaus 4"
             type="multiline"
             mdSupport={true}
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_otsikko5}
+            value={store["teema-haasteet-otsikko5"]}
             setter={setStore}
-            getterKey="teema_haasteet_otsikko5"
+            getterKey="teema-haasteet-otsikko5"
             label="Otsikko 5"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_teksti5}
+            value={store["teema-haasteet-teksti5"]}
             setter={setStore}
-            getterKey="teema_haasteet_teksti5"
+            getterKey="teema-haasteet-teksti5"
             label="Kuvaus 5"
             mdSupport={true}
             type="multiline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_otsikko6}
+            value={store["teema-haasteet-otsikko6"]}
             setter={setStore}
-            getterKey="teema_haasteet_otsikko6"
+            getterKey="teema-haasteet-otsikko6"
             label="Otsikko 6"
             type="singleline"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_haasteet_teksti6}
+            value={store["teema-haasteet-teksti6"]}
             setter={setStore}
-            getterKey="teema_haasteet_teksti6"
+            getterKey="teema-haasteet-teksti6"
             label="Kuvaus 6"
             mdSupport={true}
             type="multiline"
@@ -413,15 +413,15 @@ const Root: Component = () => {
             index={value()}
             store={store}
             setter={setStore}
-            getterKey="teema_taustavari"
-            getterKeyText="teema_tekstivari"
+            getterKey="teema-taustavari"
+            getterKeyText="teema-tekstivari"
             label="Näkökulman taustaväri (laatikko)"
           />
           <TextInputArray
             index={value()}
-            value={store.teema_tekstikoko}
+            value={store["teema-tekstikoko"]}
             setter={setStore}
-            getterKey="teema_tekstikoko"
+            getterKey="teema-tekstikoko"
             label="Näkökulman tekstikoko (pienennä otsikkoa jos ei mahdu)"
             type="singleline"
           />

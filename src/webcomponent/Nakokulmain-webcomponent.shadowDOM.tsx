@@ -17,66 +17,66 @@ const webComponent = customElement(
       "Keskellä näet teemat, jotka vaikuttavat skenaarioon. **Klikkaa näkökulmia lukeaksesi niistä lisää.**",
     teemat:
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_tekstivari:
+    "teema-tekstivari":
       '["var(--tertiary-text-color)", "var(--secondary-text-color)", "var(--main-text-color)", "var(--quaternary-text-color)", "var(--quinary-text-color)", "var(--senary-text-color)"]',
-    teema_taustavari:
+    "teema-taustavari":
       '["var(--tertiary-color)", "var(--secondary-color)", "var(--main-color)", "var(--quaternary-color)", "var(--quinary-color)", "var(--senary-color)"]',
-    teema_tekstikoko: '["6px", "4px", "6px", "6px", "6px", "6px"]',
-    teema_kuvaus:
+    "teema-tekstikoko": '["6px", "4px", "6px", "6px", "6px", "6px"]',
+    "teema-kuvaus":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_otsikko1:
+    "teema-mahdollisuudet-otsikko1":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_teksti1:
+    "teema-mahdollisuudet-teksti1":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_otsikko2:
+    "teema-mahdollisuudet-otsikko2":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_teksti2:
+    "teema-mahdollisuudet-teksti2":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_otsikko3:
+    "teema-mahdollisuudet-otsikko3":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_teksti3:
+    "teema-mahdollisuudet-teksti3":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_otsikko4:
+    "teema-mahdollisuudet-otsikko4":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_teksti4:
+    "teema-mahdollisuudet-teksti4":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_otsikko5:
+    "teema-mahdollisuudet-otsikko5":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_teksti5:
+    "teema-mahdollisuudet-teksti5":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_otsikko6:
+    "teema-mahdollisuudet-otsikko6":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_mahdollisuudet_teksti6:
+    "teema-mahdollisuudet-teksti6":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_otsikko1:
+    "teema-haasteet-otsikko1":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_teksti1:
+    "teema-haasteet-teksti1":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_otsikko2:
+    "teema-haasteet-otsikko2":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_teksti2:
+    "teema-haasteet-teksti2":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_otsikko3:
+    "teema-haasteet-otsikko3":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_teksti3:
+    "teema-haasteet-teksti3":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_otsikko4:
+    "teema-haasteet-otsikko4":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_teksti4:
+    "teema-haasteet-teksti4":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_otsikko5:
+    "teema-haasteet-otsikko5":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_teksti5:
+    "teema-haasteet-teksti5":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_otsikko6:
+    "teema-haasteet-otsikko6":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_haasteet_teksti6:
+    "teema-haasteet-teksti6":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_esimerkit:
+    "teema-esimerkit":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teema_kysymykset:
+    "teema-kysymykset":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
-    teemalinkit:
+    "teema-linkit":
       '["lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum", "lorem ipsum"]',
     tekstiversio: "[Lorem ipsum](https://www.google.fi)",
   },

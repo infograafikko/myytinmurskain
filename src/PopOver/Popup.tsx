@@ -73,7 +73,9 @@ const Popup: Component<DialogProps> = (props) => {
               <Dialog.Description class={style.dialog__description}>
                 <p
                   class={style.details__description}
-                  innerHTML={customSnarkdown(memos.cardDetails()?.teema_kuvaus)}
+                  innerHTML={customSnarkdown(
+                    memos.cardDetails()?.["teema-kuvaus"]
+                  )}
                 />
 
                 {/* MAHDOLLISUUDET */}
@@ -88,12 +90,12 @@ const Popup: Component<DialogProps> = (props) => {
                         <Details
                           title={
                             memos.cardDetails()?.[
-                              "teema_mahdollisuudet_otsikko" + el
+                              "teema-mahdollisuudet-otsikko" + el
                             ]
                           }
                           description={
                             memos.cardDetails()?.[
-                              "teema_mahdollisuudet_teksti" + el
+                              "teema-mahdollisuudet-teksti" + el
                             ]
                           }
                           index={el}
@@ -113,10 +115,10 @@ const Popup: Component<DialogProps> = (props) => {
                       return (
                         <Details
                           title={
-                            memos.cardDetails()?.["teema_haasteet_otsikko" + el]
+                            memos.cardDetails()?.["teema-haasteet-otsikko" + el]
                           }
                           description={
-                            memos.cardDetails()?.["teema_haasteet_teksti" + el]
+                            memos.cardDetails()?.["teema-haasteet-teksti" + el]
                           }
                           index={el}
                         />
@@ -128,7 +130,9 @@ const Popup: Component<DialogProps> = (props) => {
                 <h3 class={style.title}>Esimerkkejä</h3>
                 <div class={style.contentcontainer}>
                   <For
-                    each={memos.cardDetails()?.teema_esimerkit.split("\n\n")}
+                    each={memos
+                      .cardDetails()
+                      ?.["teema-esimerkit"].split("\n\n")}
                   >
                     {(paragraph) => (
                       <div
@@ -140,7 +144,9 @@ const Popup: Component<DialogProps> = (props) => {
                 </div>
                 {/* KYSYMYKSET */}
                 <h3 class={style.title}>Pohdittavia kysymyksiä</h3>
-                <For each={memos.cardDetails()?.teema_kysymykset.split("\n\n")}>
+                <For
+                  each={memos.cardDetails()?.["teema-kysymykset"].split("\n\n")}
+                >
                   {(paragraph) => (
                     <div
                       class={style.content}
@@ -150,9 +156,11 @@ const Popup: Component<DialogProps> = (props) => {
                 </For>
 
                 {/* Linkit */}
-                <Show when={memos.cardDetails()?.teemalinkit.length > 0}>
+                <Show when={memos.cardDetails()?.["teema-linkit"].length > 0}>
                   <h3 class={style.title}>Lähteet</h3>
-                  <For each={memos.cardDetails()?.teemalinkit.split("\n\n")}>
+                  <For
+                    each={memos.cardDetails()?.["teema-linkit"].split("\n\n")}
+                  >
                     {(paragraph) => (
                       <div
                         class={style.content}

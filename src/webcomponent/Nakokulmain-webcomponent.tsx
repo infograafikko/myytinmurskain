@@ -1,13 +1,14 @@
 import NakokulmainApp from "../App.tsx";
 import { customElement } from "solid-element";
-import defaultProps from "../dev/data/defaultProps.ts";
+import defaultProps from "../dev/data/defaultProps.js";
+import defaultPropsUndefined from "../dev/data/defaultPropsUndefined.js";
 import { mergeProps } from "solid-js";
 const webComponent = customElement(
   "nakokulmain-infograafi",
-  { ...defaultProps, iswebcomponent: true },
+  { ...defaultPropsUndefined, iswebcomponent: true },
   (props, { element }) => {
     //noShadowDOM();
-    const newProps = mergeProps(defaultProps, props);
+    const newProps = mergeProps(defaultPropsUndefined, props);
     return <NakokulmainApp {...newProps} />;
   }
 );

@@ -25,37 +25,37 @@ export type TextType = {
     opasteteksti3: string | undefined;
     tekstiversio: string | undefined; //stringified array
     teemat: string | undefined; //stringified array
-    teema_tekstivari: string | undefined; //stringified array
-    teema_taustavari: string | undefined; //stringified array
-    teema_tekstikoko: string | undefined; //stringified array
-    teema_kuvaus: string | undefined; //stringified array
-    teema_mahdollisuudet_otsikko1: string | undefined; //stringified array
-    teema_mahdollisuudet_teksti1: string | undefined; //stringified array
-    teema_mahdollisuudet_otsikko2: string | undefined; //stringified array
-    teema_mahdollisuudet_teksti2: string | undefined; //stringified array
-    teema_mahdollisuudet_otsikko3: string | undefined; //stringified array
-    teema_mahdollisuudet_teksti3: string | undefined; //stringified array
-    teema_mahdollisuudet_otsikko4: string | undefined; //stringified array
-    teema_mahdollisuudet_teksti4: string | undefined; //stringified array
-    teema_mahdollisuudet_otsikko5: string | undefined; //stringified array
-    teema_mahdollisuudet_teksti5: string | undefined; //stringified array
-    teema_mahdollisuudet_otsikko6: string | undefined; //stringified array
-    teema_mahdollisuudet_teksti6: string | undefined; //stringified array
-    teema_haasteet_otsikko1: string | undefined; //stringified array
-    teema_haasteet_teksti1: string | undefined; //stringified array
-    teema_haasteet_otsikko2: string | undefined; //stringified array
-    teema_haasteet_teksti2: string | undefined; //stringified array
-    teema_haasteet_otsikko3: string | undefined; //stringified array
-    teema_haasteet_teksti3: string | undefined; //stringified array
-    teema_haasteet_otsikko4: string | undefined; //stringified array
-    teema_haasteet_teksti4: string | undefined; //stringified array
-    teema_haasteet_otsikko5: string | undefined; //stringified array
-    teema_haasteet_teksti5: string | undefined; //stringified array
-    teema_haasteet_otsikko6: string | undefined; //stringified array
-    teema_haasteet_teksti6: string | undefined; //stringified array
-    teema_esimerkit: string | undefined; //stringified array
-    teema_kysymykset: string | undefined; //stringified array
-    teemalinkit: string | undefined; //stringified array
+    "teema-tekstivari": string | undefined; //stringified array
+    "teema-taustavari": string | undefined; //stringified array
+    "teema-tekstikoko": string | undefined; //stringified array
+    "teema-kuvaus": string | undefined; //stringified array
+    "teema-mahdollisuudet-otsikko1": string | undefined; //stringified array
+    "teema-mahdollisuudet-teksti1": string | undefined; //stringified array
+    "teema-mahdollisuudet-otsikko2": string | undefined; //stringified array
+    "teema-mahdollisuudet-teksti2": string | undefined; //stringified array
+    "teema-mahdollisuudet-otsikko3": string | undefined; //stringified array
+    "teema-mahdollisuudet-teksti3": string | undefined; //stringified array
+    "teema-mahdollisuudet-otsikko4": string | undefined; //stringified array
+    "teema-mahdollisuudet-teksti4": string | undefined; //stringified array
+    "teema-mahdollisuudet-otsikko5": string | undefined; //stringified array
+    "teema-mahdollisuudet-teksti5": string | undefined; //stringified array
+    "teema-mahdollisuudet-otsikko6": string | undefined; //stringified array
+    "teema-mahdollisuudet-teksti6": string | undefined; //stringified array
+    "teema-haasteet-otsikko1": string | undefined; //stringified array
+    "teema-haasteet-teksti1": string | undefined; //stringified array
+    "teema-haasteet-otsikko2": string | undefined; //stringified array
+    "teema-haasteet-teksti2": string | undefined; //stringified array
+    "teema-haasteet-otsikko3": string | undefined; //stringified array
+    "teema-haasteet-teksti3": string | undefined; //stringified array
+    "teema-haasteet-otsikko4": string | undefined; //stringified array
+    "teema-haasteet-teksti4": string | undefined; //stringified array
+    "teema-haasteet-otsikko5": string | undefined; //stringified array
+    "teema-haasteet-teksti5": string | undefined; //stringified array
+    "teema-haasteet-otsikko6": string | undefined; //stringified array
+    "teema-haasteet-teksti6": string | undefined; //stringified array
+    "teema-esimerkit": string | undefined; //stringified array
+    "teema-kysymykset": string | undefined; //stringified array
+    "teema-linkit": string | undefined; //stringified array
     
 }
 

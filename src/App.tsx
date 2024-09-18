@@ -1,21 +1,22 @@
 import { Component, ErrorBoundary, mergeProps, createEffect } from "solid-js";
 import { DataProvider } from "./DataContext";
 import Nakokulmain from "./Nakokulmain";
-import defaultProps from "./dev/data/defaultProps.ts";
-
+import defaultPropsUndefined from "./dev/data/defaultPropsUndefined.js";
+import ErrorBoundaryComponent from "./ErrorBoundary";
 interface AppProps {
   [key: string]: any; // Assuming App can accept any props, adjust if needed
 }
 
 const App: Component<AppProps> = (props) => {
-  const newProps = mergeProps(defaultProps, props);
+  console.log("input props", props);
+  const newProps = mergeProps(defaultPropsUndefined, props);
 
   return (
-    <ErrorBoundary fallback={<div>Virhe tapahtui!</div>}>
-      <DataProvider>
+    <DataProvider>
+      <ErrorBoundary fallback={<ErrorBoundaryComponent />}>
         <Nakokulmain {...newProps} />
-      </DataProvider>
-    </ErrorBoundary>
+      </ErrorBoundary>
+    </DataProvider>
   );
 };
 

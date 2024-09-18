@@ -20,7 +20,8 @@ const Nakokulmain: Component<AppProps> = (props) => {
     if (props.iswebcomponent) {
       actions.setIsWebcomponent(true);
     }
-    console.log(props);
+
+    console.log("props", props);
     actions.setTexts(props);
   });
 

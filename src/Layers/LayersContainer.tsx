@@ -64,17 +64,17 @@ const LayersContainer = () => {
             <SingleLayer
               index={i}
               text={el}
-              textcolor={state.texts.teema_tekstivari?.[i]}
+              textcolor={state.texts["teema-tekstivari"]?.[i]}
               gradient={[
-                state.texts.teema_taustavari?.[i],
-                state.texts.teema_taustavari?.[i],
+                state.texts["teema-taustavari"]?.[i],
+                state.texts["teema-taustavari"]?.[i],
               ]}
               offset={[0, offset, 0]}
               middle={[0, middle, 0]}
               classList={{}}
               class={styles.Spread}
               showPointer={state.showLayers && state.tutorialStage >= 2}
-              fontsize={state.texts.teema_tekstikoko?.[i]}
+              fontsize={state.texts["teema-tekstikoko"]?.[i]}
             />
           );
         })}
