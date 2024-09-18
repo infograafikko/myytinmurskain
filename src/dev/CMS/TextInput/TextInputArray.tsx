@@ -11,6 +11,7 @@ const TextInputArray: Component = (props: {
   label: string;
   type: "singleline" | "multiline";
 }) => {
+  console.log(props.value);
   const parsedArr = () => JSON.parse(props.value);
   const i = () => props.index - 1;
   const val = () => parsedArr()[i()];

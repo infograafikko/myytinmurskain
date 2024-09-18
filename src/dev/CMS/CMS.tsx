@@ -15,8 +15,11 @@ const CACHE_KEY = "nakokulmain_cache";
 const Root: Component = () => {
   const getCachedProps = () => {
     const cached = localStorage.getItem(CACHE_KEY);
+    console.log(cached);
     return cached ? JSON.parse(cached) : defaultProps;
   };
+
+  console.log(getCachedProps());
 
   const [store, setStore] = createStore(getCachedProps());
 

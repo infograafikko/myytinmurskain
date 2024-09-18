@@ -67,7 +67,8 @@ const PopoverBuilder: Component = (props) => {
 const PopoverComponent: Component = (props) => {
   const { state, actions } = useDataContext();
 
-  const seurausExist = () => state.texts.seuraus.length > 0;
+  const seurausExist = () =>
+    state.texts.seuraus !== undefined && state.texts.seuraus.length > 0;
 
   const ref = () => {
     const root = state.iswebcomponent

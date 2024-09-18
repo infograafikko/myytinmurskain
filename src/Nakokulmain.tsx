@@ -13,7 +13,6 @@ import Cursor from "./icons/Cursor";
 
 import customSnarkdown from "./utils/snarkdownCustomizer";
 const Nakokulmain: Component<AppProps> = (props) => {
-  console.log("defaultProps", props);
   const { state, actions } = useDataContext();
 
   createEffect(() => {
@@ -21,7 +20,6 @@ const Nakokulmain: Component<AppProps> = (props) => {
       actions.setIsWebcomponent(true);
     }
 
-    console.log("props", props);
     actions.setTexts(props);
   });
 

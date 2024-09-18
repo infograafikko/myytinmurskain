@@ -8,7 +8,6 @@ interface AppProps {
 }
 
 const App: Component<AppProps> = (props) => {
-  console.log("input props", props);
   const newProps = mergeProps(defaultPropsUndefined, props);
 
   return (
